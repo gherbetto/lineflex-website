@@ -1,4 +1,5 @@
 @import "_fonts.scss";
+@import "_typography.scss";
 @import "_variables.scss";
 @import "_mixins.scss";
 @import "_root.scss";
@@ -268,7 +269,7 @@
     width: var(--size-60-50);
     height: var(--size-60-50);
     color: #000;
-    font-family: $bold;
+    // font-family: $bold;
     background: var(--second-light-color);
     border-radius: var(--border-radius-16);
     transition: $trans;
@@ -295,7 +296,7 @@
     width: var(--size-60-50);
     height: var(--size-60-50);
     color: #fff;
-    font-family: $bold;
+    // font-family: $bold;
     background: var(--main-color);
     border-radius: var(--border-radius-16);
     transition: $trans;
@@ -330,37 +331,88 @@
 
 /* WIGETS */
 .header {
-  position: fixed;
+  // position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   height: var(--header-height);
-  background: #fff;
+  background: none;
   z-index: 10;
   transition: $trans;
+  padding-top: 20px;
+
+  &__logo {
+    @include flex-center;
+    margin-bottom: space(70);
+
+    .logo {
+      img {
+        height: auto;
+        width: 100%;
+      }
+      @include breakpoint(md) {
+        width: 134px;
+        height: 92px;
+      }
+    }
+  }
 }
 .footer {
   margin-top: var(--page-gap);
   padding: 20px 0;
-  background: #fff;
+  background: var(--body-bg-color);
 }
 
 /* PAGES */
 .page {
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    aspect-ratio: 1 / 1;
+    height: auto;
+    width: 100vh;
+    position: absolute;
+    right: -20%;
+    bottom: 0;
+    background: url(../img/bg-logo.png) center;
+    background-size: cover;
+
+    @include breakpoint(xxl) {
+      right: -20%;
+    }
+
+    @include breakpoint(lg) {
+      right: -30%;
+    }
+
+    @include breakpoint(md) {
+      right: -50%;
+    }
+    @include breakpoint(sm) {
+      right: -70%;
+    }
+    @include breakpoint(xs) {
+      right: -90%;
+    }
+  }
+
   padding-top: calc(var(--header-height) + var(--page-gap));
 
   &__title {
-    font-size: var(--fs-48-24);
-    font-family: $bold;
+    @include font-heading1;
+    color: var(--main-color);
+    margin-bottom: space(20);
   }
   &__subtitle {
-    font-size: var(--fs-24-18);
-    font-family: $bold;
+    @include font-subtitle;
   }
   &__heading {
     font-size: var(--fs-18-16);
-    font-family: $bold;
+    // font-family: $bold;
   }
   &__checkbox {
     position: relative;
@@ -441,16 +493,16 @@
     }
     h1 {
       font-size: var(--fs-32-24);
-      font-family: $bold;
+      // font-family: $bold;
       color: #ccc;
     }
     h2 {
       font-size: var(--fs-24-lg-16);
-      font-family: $bold;
+      // font-family: $bold;
     }
     h3 {
       font-size: var(--fs-18-14);
-      font-family: $bold;
+      // font-family: $bold;
     }
     a {
       display: block;
@@ -512,10 +564,10 @@
         border-bottom: 1px solid var(--second-color);
 
         dt {
-          font-family: $regular;
+          // font-family: $regular;
         }
         dd {
-          font-family: $bold;
+          // font-family: $bold;
         }
       }
     }
@@ -525,7 +577,7 @@
 
       thead tr {
         color: #fff;
-        font-family: $bold;
+        // font-family: $bold;
         background: #000;
       }
       tbody tr {
@@ -549,5 +601,131 @@
         }
       }
     }
+  }
+
+  @include breakpoint(xl) {
+    background-position: 350% center;
+  }
+
+  @include breakpoint(lg) {
+    background-position: 150% center;
+  }
+
+  @include breakpoint(md) {
+    background-position: 220% 120%;
+    background-size: 633px;
+  }
+  @include breakpoint(sm) {
+    background-position: 150% 120%;
+    background-size: 633px;
+  }
+  @include breakpoint(xs) {
+    background-position: -100% 120%;
+    background-size: 633px;
+  }
+}
+
+//main page
+
+.main-page {
+  .page__subtitle {
+    max-width: 770px;
+    margin-bottom: space(56);
+
+    @include breakpoint(md) {
+      margin-bottom: space(36);
+    }
+  }
+}
+
+.product-list {
+  max-width: 900px;
+  @include font-text;
+  margin-bottom: space(100);
+
+  &__intro {
+    @include font-text;
+    margin-bottom: space(16);
+  }
+
+  &__items {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+    column-gap: 106px;
+
+    @include breakpoint(md) {
+      row-gap: 16px;
+    }
+
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 0;
+    &::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      background: var(--main-color);
+      border-radius: 50%;
+    }
+  }
+}
+
+.contact-info {
+  text-align: center;
+  &__label {
+    font-size: 24px;
+    margin-bottom: 16px;
+
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  &__phone {
+    @include font-phone;
+    color: var(--main-color);
+    transition: $trans;
+
+    svg {
+      display: none;
+    }
+
+    @include hover {
+      color: var(--main-color-hover);
+    }
+
+    @include breakpoint(md) {
+      @include flex-center;
+      border-radius: 40px;
+      height: 70px;
+      width: 70px;
+      background-color: var(--main-color);
+      span {
+        display: none;
+      }
+
+      svg {
+        display: block;
+      }
+
+      @include hover {
+        background-color: var(--main-color-hover);
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    position: absolute;
+    bottom: 32px;
+    right: 16px;
   }
 }

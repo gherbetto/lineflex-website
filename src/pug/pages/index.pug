@@ -1,23 +1,24 @@
-extends ../layouts/head.pug 
+extends ../layouts/head.pug
 
 block variables
-	- const pagetitle = "Главная";
+  - const pagetitle = "Главная";
 
 block content
-	main.page
-		.container
-			.page__content
-				h1 Привкет
-			include ../components/bread
-			include ../components/bread-title
-			include ../components/pag
-		.container.my-5 
-			.main-slider
-				.main-slider__items
-					div
-						img(src="img/c-map.webp", alt="")
-					div
-						img(src="img/c-map.webp", alt="")
-					div
-						img(src="img/c-map.webp", alt="")
-				.main-slider__dots
+  main.page.main-page
+    .container
+      h1.page__title Теплоизоляция Lineflex
+      p.page__subtitle Идеальное решение для нагревательных, охладительных и вентиляционных систем
+
+      .product-list
+        p.product-list__intro Большой ассортимент теплоизоляции на основе вспененного каучука:
+        ul.product-list__items
+          li.product-list__item Рулонная теплоизоляция
+          li.product-list__item Фольгированная теплоизоляция
+          li.product-list__item Самоклеящаяся теплоизоляция
+          li.product-list__item Трубки
+
+      .contact-info
+        p.contact-info__label Контактный номер:
+        a.contact-info__phone(href='tel:+73472460622')
+          +svg('phone-icon', 32 ,32)(class="icon-fill")
+          span +7 (347) 246-06-22

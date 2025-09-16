@@ -39,16 +39,17 @@
   --border-radius-main: 2px;
 
   --page-gap: 60px;
-  --header-height: 100px;
+  --page-gap-px: 60;
+  --header-height: 236px;
 
-  --main-color: #f87b11;
-  --main-color-hover: #f78f08;
+  --main-color: hsl(150 84 20);
+  --main-color-hover: hsl(150 84 14);
   --accent-color: #333;
   --accent-color-hover: #333;
   --second-color: #e6e6e6;
   --second-light-color: #f3f3f3;
-  --text-color: #000;
-  --body-bg-color: #fff;
+  --text-color: hsl(0 1 26);
+  --body-bg-color: #ededed;
   --shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -91,6 +92,7 @@
 
 @include breakpoint(md) {
   :root {
+    --header-height: 104px;
     --fs-72-32: 2rem;
     --fs-48-24: 1.5rem;
   }
