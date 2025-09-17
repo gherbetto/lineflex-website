@@ -42,13 +42,13 @@
   --page-gap-px: 60;
   --header-height: 236px;
 
-  --main-color: hsl(150 84 20);
-  --main-color-hover: hsl(150 84 14);
+  --main-color: hsl(150 84% 20%);
+  --main-color-hover: hsl(150 84% 14%);
   --accent-color: #333;
   --accent-color-hover: #333;
   --second-color: #e6e6e6;
   --second-light-color: #f3f3f3;
-  --text-color: hsl(0 1 26);
+  --text-color: hsl(0 1% 26%);
   --body-bg-color: #ededed;
   --shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.1);
 }
