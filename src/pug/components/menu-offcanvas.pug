@@ -1,7 +1,34 @@
-include ../layout/mixins.pug
-.offcanvas.offcanvas-start.menu-offcanvas#menu-offcanvas
+include ../layouts/mixins.pug
+.offcanvas.offcanvas-end.menu-offcanvas#menu-offcanvas
 
-    button.offcanvas__close(type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть")
-        +svg('close', 12)(class='icon color-white')
+  button.offcanvas__close(type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть")
+    +svg('close-icon', 32)(class='icon icon--responsive')
+  .offcanvas__content
+    ul.offcanvas__nav
+      li: a(href="#") Выполненные объекты
+      li: a(href="#") Доставка
+      li: a(href="#") Контакт
+      li: a(href="#") Монтаж
+      li: a(href="#") Контакты
 
-    .offcanvas__content
+.offcanvas.offcanvas-end.catalog-offcanvas#catalog-offcanvas
+
+  button.offcanvas__close(type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть")
+    +svg('close-icon', 32)(class='icon icon--responsive')
+
+  .offcanvas__content
+    ul.offcanvas__nav
+      li: a(href="#") О компании
+      li.dropdown-center
+        a.dropdown-toggle(href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Каталог
+        ul.dropdown-menu
+          li: a.dropdown-item(href="#") Сайты
+          li: a.dropdown-item(href="#") Фирменные стили
+          li: a.dropdown-item(href="#") Иллюстрации
+          li: a.dropdown-item(href="#") Инфографика
+          li: a.dropdown-item.active(href="#") Продвижение сайтов
+      li: a(href="#") Выполненные объекты
+      li: a(href="#") Доставка
+      li: a(href="#") Контакт
+      li: a(href="#") Монтаж
+      li: a(href="#") Контакты

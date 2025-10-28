@@ -1,32 +1,21 @@
-//Display
+//Heading
 
-@mixin font-display1 {
-  font-family: $heading-font;
+@mixin font-heading-1 {
+  font-family: $font-secondary;
+  line-height: $line-height-secondary;
   font-style: normal;
-  font-weight: 700;
-  font-size: 2rem;
-  font-size: clamp(2rem, 1.2rem + 4vw, 6rem);
-  line-height: 140%;
+  font-weight: 800;
+  font-size: 2.25rem;
+  font-size: clamp(
+    2.25rem,
+    1.7658227848101267rem + 2.278481012658228vw,
+    4.5rem
+  );
 }
 
-@mixin font-subtitle {
-  font-family: $primary-font;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.25rem;
-  font-size: clamp(1.25rem, 1.0886075949367089rem + 0.759493670886076vw, 2rem);
-}
-
-@mixin font-text {
-  font-family: $primary-font;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.8924050632911392rem + 0.5063291139240507vw, 1.5rem);
-}
-
-@mixin font-phone {
-  font-family: $primary-font;
+@mixin font-heading-2 {
+  font-family: $font-secondary;
+  line-height: $line-height-secondary;
   font-style: normal;
   font-weight: 800;
   font-size: 1.5rem;
@@ -37,146 +26,126 @@
   );
 }
 
-//Heading
+// Title
 
-@mixin font-heading1 {
-  font-family: $secondary-font;
+@mixin font-title-1 {
+  font-family: $font-secondary;
+  line-height: $line-height-secondary;
   font-style: normal;
   font-weight: 800;
   font-size: 2rem;
-  font-size: clamp(2rem, 1.4620253164556962rem + 2.5316455696202533vw, 4.5rem);
+  font-size: clamp(2rem, 1.8924050632911393rem + 0.5063291139240507vw, 2.5rem);
 }
 
-@mixin font-heading2 {
-  font-family: $heading-font;
+@mixin font-title-2 {
+  font-family: $font-secondary;
+  line-height: $line-height-secondary;
   font-style: normal;
-  font-weight: 700;
-  font-size: 1.5rem;
-  font-size: clamp(1.5rem, 1.1rem + 2vw, 3.5rem);
-  line-height: 135%;
-}
-
-@mixin font-heading3 {
-  font-family: $heading-font;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.5rem;
-  font-size: clamp(1.5rem, 1.4rem + 0.5vw, 2rem);
-  line-height: 135%;
-}
-
-@mixin font-heading4 {
-  font-family: $heading-font;
-  font-style: normal;
-  font-weight: 600;
-  font-size: clamp(1.5rem, 4vw, 1.75rem);
-  line-height: 135%;
-}
-
-// Title
-
-@mixin font-titlecard {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.75rem;
-  font-size: clamp(0.75rem, 0.55rem + 1vw, 1.75rem);
-}
-
-@mixin font-titlecard2 {
-  font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.25rem;
-  font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
-}
-
-// Text
-
-@mixin font-text1 {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
-  line-height: 140%;
-}
-
-@mixin font-text2 {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
-}
-
-@mixin font-text2-bold {
-  font-style: normal;
-  font-weight: 800;
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
-}
-
-@mixin font-text3 {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.75rem;
-  font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
-  line-height: 130%;
-}
-
-@mixin font-text4 {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.75rem;
-  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 1rem);
-  line-height: 130%;
-}
-
-// Text-card
-
-@mixin font-textcard {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.625rem;
   font-size: clamp(
-    0.625rem,
-    0.44999999999999996rem + 0.8750000000000001vw,
+    1.25rem,
+    1.1962025316455696rem + 0.25316455696202533vw,
     1.5rem
   );
 }
 
-@mixin font-texttab1 {
+// Text
+
+@mixin font-text-1-regular {
   font-style: normal;
-  font-weight: 500;
-  font-size: 0.875rem;
-  font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1.5rem);
+  font-weight: 400;
+  font-size: 1rem;
+  font-size: clamp(
+    1rem,
+    0.9462025316455697rem + 0.25316455696202533vw,
+    1.25rem
+  );
 }
 
-// Menu
-
-@mixin font-menu1 {
+@mixin font-text-1-semibold {
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
-  font-size: clamp(1rem, 0.975rem + 0.125vw, 1.125rem);
+  font-size: clamp(
+    1rem,
+    0.9462025316455697rem + 0.25316455696202533vw,
+    1.25rem
+  );
 }
 
-@mixin font-menu2 {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
-}
-
-@mixin offcanvas-menu {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.5rem;
-}
-
-// Content
-
-@mixin font-textcontent {
+@mixin font-text-2-regular {
   font-style: normal;
   font-weight: 400;
   font-size: 0.875rem;
-  font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1.5rem);
-  line-height: 170%;
+  font-size: clamp(
+    0.875rem,
+    0.8481012658227848rem + 0.12658227848101267vw,
+    1rem
+  );
+}
+
+@mixin font-text-2-bold {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.8481012658227848rem + 0.12658227848101267vw,
+    1rem
+  );
+}
+
+@mixin font-text-3-regular {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  font-size: clamp(
+    0.75rem,
+    0.7231012658227848rem + 0.12658227848101267vw,
+    0.875rem
+  );
+}
+
+@mixin font-text-3-semibold {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.75rem;
+  font-size: clamp(
+    0.75rem,
+    0.7231012658227848rem + 0.12658227848101267vw,
+    0.875rem
+  );
+}
+
+// Misc
+
+@mixin font-button {
+  font-family: $font-secondary;
+  line-height: $line-height-secondary;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.7943037974683544rem + 0.379746835443038vw,
+    1.25rem
+  );
+}
+
+@mixin font-nav {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  font-size: clamp(
+    1rem,
+    0.9462025316455697rem + 0.25316455696202533vw,
+    1.25rem
+  );
+}
+
+@mixin font-offcanvas {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1.25rem;
 }

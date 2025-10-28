@@ -1,6 +1,9 @@
-import mainSlider from "./modules/mainSlider.js"
+// import mainSlider from "./modules/mainSlider.js"
+import bestweb from "./modules/bestweb.js";
 
-window.addEventListener('load', function(){
+bestweb();
 
-    mainSlider()
-})
+// window.addEventListener('load', function(){
+
+//     mainSlider()
+// })

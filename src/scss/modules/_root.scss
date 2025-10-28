@@ -42,14 +42,19 @@
   --page-gap-px: 60;
   --header-height: 236px;
 
-  --main-color: hsl(150 84% 20%);
-  --main-color-hover: hsl(150 84% 14%);
-  --accent-color: #333;
-  --accent-color-hover: #333;
-  --second-color: #e6e6e6;
-  --second-light-color: #f3f3f3;
-  --text-color: hsl(0 1% 26%);
-  --body-bg-color: #ededed;
+  --color-primary: hsl(150 84% 20%);
+  --color-green-dark: hsl(150 84% 14%);
+  --color-green-light: hsl(150 11% 86%);
+  --color-gray-1: hsl(0 1% 26%);
+  --color-gray-2: hsl(0 1% 75%);
+  --color-gray-3: hsl(120 4% 92%);
+  --color-gray-4: hsl(150 5% 95%);
+  --color-white: #fff;
+  --color-text-default: hsl(0 1% 26%);
+  --color-text-inactive: hsl(0 1% 75%);
+  --color-text-white: #fff;
+  --body-bg-color: #fbfbfb;
+
   --shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -63,6 +68,7 @@
 }
 @include breakpoint(xl) {
   :root {
+    --page-gap: 40px;
     --fs-72-32: 2.625rem;
     --fs-36-24: 1.5rem;
     --fs-32-24: 1.5rem;
@@ -92,6 +98,7 @@
 
 @include breakpoint(md) {
   :root {
+    --page-gap: 24px;
     --header-height: 104px;
     --fs-72-32: 2rem;
     --fs-48-24: 1.5rem;

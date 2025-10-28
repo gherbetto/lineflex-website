@@ -1,6 +1,43 @@
 include mixins.pug
-header.header
-  .container
-    .header__logo
-      a.logo.logo--main(href="#")
-        img(src="./img/logo.png" alt="" width="315" height="216")
+//- BEM Block: header
+header.header.container
+  .header__container
+    //- Element: logo
+    a.header__logo(href="#")
+      img.header__logo-img(src="../img/logo.svg" alt="LINEFLEX Logo")
+
+    //- Element: nav (Desktop)
+    .header__nav
+      nav.header__nav-desktop
+        ul.header__nav-list
+          li.header__nav-item: a.header__nav-link(href="#") Дилерам
+          li.header__nav-item: a.header__nav-link(href="#") Документы
+          li.header__nav-item: a.header__nav-link(href="#") Контакты
+
+    //- Element: actions/utilities group
+    .header__actions
+      .header__actions-top
+        //- Sub-Element: language selector
+        .header__lang-selector
+          a.header__lang-link.header__lang-link--active(href="#") Ru
+          //- span.header__lang-separator /
+          a.header__lang-link(href="#") En
+
+      .header__actions-bottom
+        //- Sub-Element: contact info
+        .header__contact
+          a.header__contact-phone(href="tel:+73472460622") +7 (347) 246-06-22
+          span.header__contact-city Уфа
+
+        //- Sub-Element: utility icons (Cart/Request)
+        .header__utility-icons
+          button.header__utility-btn.header__utility-btn--cart
+            +svg('cart-icon', 24 ,24)(class="icon")
+
+          button.bottom-fixed__item.btn-offcanvas
+          button.header__utility-btn.header__utility-btn--offcanvas(type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-offcanvas")
+            +svg('menu-icon', 24 ,24)(class="icon")
+
+        button.button.header__cta-btn Отправить заявку
+
+  .header__logo-text ООО «ПРМ групп» официальный дистрибьютор

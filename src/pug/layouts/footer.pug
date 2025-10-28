@@ -1,3 +1,36 @@
 include mixins.pug
 footer.footer
-    .container footer
+  .container
+    .footer__wrapper
+      .footer__top
+        a.footer__logo(href="")
+          img.footer__logo-img(src="../img/logo.svg" alt="LINEFLEX Logo")
+        nav.footer__nav
+          a.footer__nav-item(href="#") Дилерам
+          a.footer__nav-item(href="#") Документы
+          a.footer__nav-item(href="#") Контакты
+
+        .footer__contacts
+          .footer__contacts-item
+            .footer__contacts-title Адрес
+            a.footer__contacts-text(href="#") 450078, Уфа, Владивостокская 4Б
+          .footer__contacts-item
+            .footer__contacts-title Телефон
+            a.footer__contacts-text(href="#") +7 (347) 246-06-22
+          .footer__contacts-item
+            .footer__contacts-title Почта
+            a.footer__contacts-text(href="#") zakaz@lineflex.ru
+          .footer__contacts-item
+            .footer__contacts-title Режим работы
+            .footer__contacts-text(href="#") Пн-Пт 09.00-18.00,
+              br
+              | Сб 10.00-13.00
+      .footer__bottom
+        .footer__copyright
+          span © «ПРМ групп» 2025
+        .footer__terms
+          span Все права защищены. Правовая информация
+        .footer__bw
+          a.bestweb-wr(href="https://bestweb.ru/" target="_blank" title="Разработка сайта, поддержка сайта Bestweb г.Уфа")
+            +svg('bestweb', 151, 60)(class='icon-fill js-bw-logo bw-dark')
+

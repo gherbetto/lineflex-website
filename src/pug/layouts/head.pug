@@ -22,11 +22,13 @@ html(lang="ru")
   body
     include svg.pug
     //- block modal
+    include ../components/bottom-fixed.pug
+    include ../components/menu-offcanvas.pug
     //- include ../components/backdrop.pug
     //- include ../components/modal.pug
     .wrapper
       block header
         include header.pug
       block content
-      //- block footer
-      //-   include footer.pug
+      block footer
+        include footer.pug

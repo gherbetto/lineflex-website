@@ -1,24 +1,16 @@
-include ../layout/mixins.pug
+include ../layouts/mixins.pug
 .bottom-fixed
-    .container 
-        .bottom-fixed__items 
-            button.controls-item.empty.btn-catalog#js-header-menu(href="#")
-                .controls-item__icon
-                    +svg('catalog', 18, 18)(class="icon")
-                span Каталог       
-            a.controls-item.empty(href="#")
-                .controls-item__icon
-                    +svg('compare', 26, 20)(class="icon")
-                span Сравнить
-            a.controls-item.empty(href="#")
-                .controls-item__icon
-                    +svg('fav', 26, 22)(class="icon")
-                span Избранное
-            a.controls-item.empty(href="#")
-                .controls-item__icon
-                    +svg('user', 20, 24)(class="icon")
-                span Войти
-            a.controls-item(href="#")
-                .controls-item__icon
-                    +svg('cart', 20, 24)(class="icon")
-                span 29 700 ₽
+  .container
+    .bottom-fixed__items
+      button.bottom-fixed__item.btn-offcanvas(type="button" data-bs-toggle="offcanvas" data-bs-target="#catalog-offcanvas")
+        +svg("grid-menu-icon", 24)(class='icon')
+        span Каталог
+      a.bottom-fixed__item(href="#")
+        +svg('search-icon', 24)
+        span Фильтр
+      a.bottom-fixed__item(href="#")
+        +svg("cart-icon", 24)
+        span Корзина
+      button.bottom-fixed__item.btn-offcanvas(type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-offcanvas")
+        +svg('menu-icon', 24)
+        span Меню

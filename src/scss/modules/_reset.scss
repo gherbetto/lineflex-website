@@ -71,12 +71,12 @@ button {
   color: inherit;
   cursor: pointer;
 }
-// img {
-//   max-width: 100%;
-//   max-height: 100%;
-//   width: 100%;
-//   height: auto;
-// }
+img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
+}
 textarea {
   max-width: 100%;
   width: 100%;
@@ -101,17 +101,6 @@ dd {
   padding: 0;
   margin: 0;
 }
-b,
-dt,
-h1,
-h2,
-h3,
-h4,
-h5,
-strong {
-  // font-family: $bold;
-  // font-weight: normal;
-}
 s {
   text-decoration-color: var(--main-color);
 }
@@ -122,9 +111,9 @@ html {
 body {
   height: 100%;
   min-width: 340px;
-  font-family: $primary-font;
-  line-height: 1.2;
-  color: var(--text-color);
+  font-family: $font-primary;
+  line-height: $line-height-default;
+  color: var(--color-text-default);
   background: var(--body-bg-color);
 }
 header {
