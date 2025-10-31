@@ -1,0 +1,108 @@
+extends ../layouts/head.pug
+
+block variables
+  - const pagetitle = "Контакты";
+
+block content
+  main.page
+    .container
+      section.contacts-section
+        include ../components/bread
+        // Заголовок (Title)
+        h1.contacts-section__title
+          span.highlight Контакты
+
+        // Карта (Map Placeholder)
+        .contacts-section__map-wrapper
+          // В реальном проекте сюда вставляется код Яндекс/Google карты
+          .contacts-section__map-placeholder
+            img(src="../img/map-image.png" alt="")
+
+          // Основные контактные данные (Details column)
+          .contacts-section__info
+            // Адрес (Address)
+            .contacts-section__detail-item
+              .contacts-section__detail-label Адрес
+              .contacts-section__detail-value 450078, Уфа, Владивостокская 4Б
+
+            // Телефон (Phone)
+            .contacts-section__detail-item
+              .contacts-section__detail-label Телефон
+              .contacts-section__detail-value
+                a(href="tel:+73472460622") +7 (347) 246-06-22
+
+            // Режим работы (Schedule)
+            .contacts-section__detail-item
+              .contacts-section__detail-label Режим работы
+              .contacts-section__schedule
+                .contacts-section__schedule-row
+                  .contacts-section__schedule-days Пн–Пт
+                  .contacts-section__schedule-hours 09:00–18:00
+                .contacts-section__schedule-row
+                  .contacts-section__schedule-days СБ
+                  .contacts-section__schedule-hours 10:00–13:00
+
+            // Почта (Email)
+            .contacts-section__detail-item
+              .contacts-section__detail-label Почта
+              .contacts-section__detail-value
+                a(href="mailto:zakaz@lineflex.ru") zakaz@lineflex.ru
+
+
+      section.requisites-section
+        h2.requisites-section__title
+          span.highlight.highlight--beginning Реквизиты
+          |
+          | компании
+        .requisites-section__ownership
+          | Общество с ограниченной ответственностью «ПРИ групп»
+
+        // Директор (Director Info)
+        .requisites-section__director
+          .requisites-section__director-label Директор
+          .requisites-section__director-name Акдоган Эльвира Глимхановна
+
+        // Сетка с реквизитами (Requisites Grid)
+        .requisites-section__grid
+          // Юридический адрес (Legal Address)
+          .requisites-section__grid-item
+            .requisites-section__item-label Юридический адрес
+            .requisites-section__item-value 450074, Республика Башкортостан, г. Уфа, ул. Пугачева, дом 300, офис 33А
+
+          // Фактический адрес (Actual Address)
+          .requisites-section__grid-item
+            .requisites-section__item-label Фактический адрес
+            .requisites-section__item-value 450078, Республика Башкортостан, г. Уфа, ул. Владивостокская 4Б
+
+          // Код организации по ОКПО (OKPO Code)
+          .requisites-section__grid-item
+            .requisites-section__item-label Код организации по ОКПО
+            .requisites-section__item-value 20408559
+
+          // Банковские реквизиты (Banking Details)
+          .requisites-section__grid-item
+            .requisites-section__item-label Банковские реквизиты
+            .requisites-section__item-value
+              | Р/СЧ 4070281080000007743 в филиале ПАО «УРАЛСИБ» г. Уфа, БИК 048073770, К/СЧ 30101810600000000770
+
+          // Код причины постановки КПП (KPP Code)
+          .requisites-section__grid-item
+            .requisites-section__item-label Код причины постановки КПП
+            .requisites-section__item-value 027401001
+
+          // ОГРН (OGRN)
+          .requisites-section__grid-item
+            .requisites-section__item-label ОГРН
+            .requisites-section__item-value 1170280079310
+
+          // ОКВЭД (OKVED)
+          .requisites-section__grid-item
+            .requisites-section__item-label ОКВЭД
+            .requisites-section__item-value 46.49
+
+          // ИНН (INN)
+          .requisites-section__grid-item
+            .requisites-section__item-label ИНН
+            .requisites-section__item-value 02741892894
+
+      include ../components/footer-form.pug

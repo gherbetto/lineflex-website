@@ -1,0 +1,30 @@
+include ../layouts/mixins.pug
+
+section.footer-form
+  .container
+    .footer-form__header
+      h3.footer-form__title
+        span.highlight.highlight--beginning Обратная
+        |
+        |связь
+    form.footer-form__form(action="")
+      fieldset.form-fieldset
+        .form-floating
+          input.form-control(type="text" placeholder="Ваше имя")
+          label Ваше имя
+        .form-floating
+          input.form-control(type="text" placeholder="Ваш телефон" required)
+          label Ваш телефон
+      fieldset.form-fieldset.footer-form__textinput
+        .form-floating
+          textarea.form-control(placeholder="Сообщение" required)
+          label Сообщение
+      .form-actions
+        .form-buttons
+          button(type="button").button.form-button Отправить
+      .footer-form__form-check
+        input.form-check-input#colab-form-checkbox(type="checkbox" name="" required)
+        label.form-check-label(for="colab-form-checkbox")
+          | Согласен с
+          |
+          a.user-agreement-link(href="/user-agreement" target="_blank") обработкой персональных данных

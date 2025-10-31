@@ -52,6 +52,13 @@
 
 // Text
 
+@mixin font-text-name-semibold {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.0886075949367089rem + 0.759493670886076vw, 2rem);
+}
+
 @mixin font-text-1-regular {
   font-style: normal;
   font-weight: 400;

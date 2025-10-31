@@ -1,0 +1,13 @@
+include ../layouts/mixins.pug
+
+.header-bottom
+  .container
+    .header-bottom__container
+      button.button.header-bottom__catalog-button(data-menu='1' title='Меню каталога с продункцией')
+      button.button.header-bottom__filter-button(data-menu='2' title='Фильтр по характеристикам товаров')
+      form.search-block.header-bottom__form(method='GET' action='https://kflex.ru/shop/')
+        input(type='hidden' name='module' value='shop')
+        input(type='hidden' name='action' value='search')
+        input.text-input.search-block__input(type='text' name='phrase' placeholder='Поиск категорий или товаров. Например: ST' title='Поиск категорий или товаров. Например: ST')
+        button.search-block__btn(title='Найти' type='submit')
+      button#show-card-btn-1.btn.header-bottom__card-btn.in-cart(title='Корзина' disabled='') 0&nbsp;&tcy;&ocy;&vcy;&acy;&rcy;&ocy;&vcy;
