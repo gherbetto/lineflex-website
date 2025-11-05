@@ -1,4 +1,20 @@
 mixin svg(id, w='40', h=`${w}`)
-    if id
-        svg&attributes(attributes)(width=`${w}px` height=`${h}px`)
-            use(xlink:href='#' + id)
+  if id
+    svg&attributes(attributes)(width=`${w}px` height=`${h}px`)
+      use(xlink:href='#' + id)
+
+mixin result-item(imageSrc, imageAlt, title, link, description, showCartButton = true)
+  .result-item
+    .result-item__image-wrapper
+      img.result-item__image(src=imageSrc alt=imageAlt)
+
+    .result-item__content
+      h2.result-item__title
+        a.result-item__link(href=link)= title
+
+      .result-item__description= description
+
+    if showCartButton
+      .result-item__actions
+        button.header__utility-btn.header__utility-btn--cart.result-item__add-to-cart(type="button")
+          +svg('cart-icon', 24, 24)(class="icon")

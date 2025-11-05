@@ -4,4 +4,55 @@ block variables
   - const pagetitle = "Каталог";
 
 block content
-  main.page
+  main.page.catalog-page
+    .container
+      include ../components/bread
+        // Заголовок (Title)
+      h1.catalog-page__title.page__title
+        span.highlight Каталог
+
+      section.catalog-section
+
+        .insulation__cards.catalog-section__cards
+          //- Карточка 1
+          a.insulation-card.catalog-section__card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title Рулоны
+
+
+            .insulation-card__image.catalog-section__card-image
+              img(src="img/card-1-bg.png" alt="E-AG")
+
+
+          //- Карточка 1
+          a.insulation-card.catalog-section__card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title Трубки
+
+
+            .insulation-card__image.catalog-section__card-image
+              img(src="img/card-2-bg.png" alt="E-AG")
+
+
+          //- Карточка 1
+          a.insulation-card.catalog-section__card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title Аксессуары
+
+
+            .insulation-card__image.catalog-section__card-image
+              img(src="img/card-4-bg.png" alt="E-AG")
+
+
+          //- Карточка 1
+          a.insulation-card.catalog-section__card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title E-AG
+
+
+            .insulation-card__image.catalog-section__card-image
+              img(src="img/card-2-bg.png" alt="E-AG")
+
+
+
+      include ../components/footer-form.pug

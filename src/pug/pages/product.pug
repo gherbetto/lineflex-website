@@ -1,0 +1,187 @@
+extends ../layouts/head.pug
+
+block variables
+  - const pagetitle = "Каталог";
+
+block content
+  main.page.product-page
+    .container
+      include ../components/bread
+        // Заголовок (Title)
+      h1.product-page__title.page__title
+        | Рулоны
+        |
+        span.highlight E-AG
+
+      section.product-detail
+        // Layout Container (for the two columns: Text/Specs and Image)
+        .product-detail__layout
+          // Left Column: Description and Specifications
+          .product-detail__content
+            p.product-detail__material-label Материал E-AG
+            // Description
+            p.product-detail__description
+              | LINEFLEX AL GUARD AG - это рулоны из эластомерного вспененного каучука на клеевой основе, покрытие
+              | алюминиевой фольгой и упрочненной ПВХ-пленкой. Они обладают низкой теплопроводностью, высоким
+              | сопротивлению диффузии водяного пара и предотвращают образование конденсата.
+
+            // Specifications Table (Best semantic choice for key/value data)
+            .product-detail__specs
+              table.specs-table
+                tbody
+                  tr
+                    th.specs-table__key Сопротивление диффузии водяного пара
+                    td.specs-table__value μ ≥ 7000
+                  tr
+                    th.specs-table__key Группа горючести EN 13501-1 / ГОСТ 30244
+                    td.specs-table__value В-s3-d0 / Г1
+                  tr
+                    th.specs-table__key pH
+                    td.specs-table__value 6-8
+                  tr
+                    th.specs-table__key Гибкость
+                    td.specs-table__value Отличная
+                  tr
+                    th.specs-table__key Озон
+                    td.specs-table__value Хорошо
+                  tr
+                    th.specs-table__key Процент закрытых клеток
+                    td.specs-table__value > 9
+                  tr
+                    th.specs-table__key Устойчивость к воздействию химических веществ (масла, минеральные масла)
+                    td.specs-table__value Хорошая
+                  tr
+                    th.specs-table__key Запах
+                    td.specs-table__value Нейтральный
+
+            // Temperature Range
+            .product-detail__temperature-range
+              span.product-detail__temperature-icon
+                +svg('temp-icon', 16 ,16)(class="icon")
+                span -200...+110C
+
+          // Right Column: Product Image
+          .product-detail__media
+            img.product-detail__image(src="img/big-product-1.png" alt="Рулон E-AG")
+
+
+      // Main block for the entire variant selection section
+      section.product-variants
+        h2.product-variants__title Фильтры
+
+        // Nested Block: The Filter component (e.g., Thickness)
+        .variant-filter
+          p.variant-filter__label
+            span.variant-filter__icon -
+            | Толщина (мм)
+
+          ul.variant-filter__options.nav(role="tablist")
+            // Active option
+            li.nav-item(role="")
+              button.variant-filter__option.active(
+                id="width-6-tab",
+                data-bs-toggle="tab",
+                data-bs-target="#width-6",
+                type="button",
+                role="tab",
+                aria-controls="width",
+                aria-selected="true"
+              ) 6
+            // Other options
+            li.nav-item
+              button.variant-filter__option(
+                id="width-9-tab",
+                data-bs-toggle="tab",
+                data-bs-target="#width-9",
+                type="button",
+                role="tab",
+                aria-controls="width",
+                aria-selected="false"
+              ) 9
+            button.variant-filter__option(type="button") 13
+            button.variant-filter__option(type="button") 19
+            button.variant-filter__option(type="button") 25
+            button.variant-filter__option(type="button") 32
+            button.variant-filter__option(type="button") 50
+
+        .product-variants__content.tab-content
+          .product-variants__tab-content.tab-pane.fade.show.active(
+            id="width-6",
+            role="tabpanel"
+          )
+            .product-variants__table.table-responsive-xl
+              table.variant-table
+                thead
+                  tr.variant-table__header-row
+                    th.variant-table__header Рулоны E-AG
+                    th.variant-table__header Толщина
+                    th.variant-table__header Ширина 1 м
+                      br
+                      span.variant-table__subtitle м2/рулон
+                    th.variant-table__header Ширина 1.2 м
+                      br
+                      span.variant-table__subtitle м2/рулон
+                    th.variant-table__header Цена
+                    th.variant-table__header Добавить к заказу
+                tbody
+                  // Row 1
+                  tr.variant-table__row
+                    td.variant-table__cell.variant-table__cell--name E-AG
+                    td.variant-table__cell 6 мм
+                    td.variant-table__cell 30
+                    td.variant-table__cell 36
+                    td.variant-table__cell.variant-table__cell--price 3226 ₽/м²
+                    td.variant-table__cell.variant-table__cell--actions
+                      button.header__utility-btn.header__utility-btn--cart.variant-table__add-to-cart(type="button" aria-label="Добавить EA-AG в корзину")
+                        +svg('cart-icon', 24, 24)(class="icon")
+                  // Row 2
+                  tr.variant-table__row
+                    td.variant-table__cell.variant-table__cell--name EA-AG
+                    td.variant-table__cell 6 мм
+                    td.variant-table__cell 60
+                    td.variant-table__cell 63
+                    td.variant-table__cell.variant-table__cell--price 3548 ₽/м²
+                    td.variant-table__cell.variant-table__cell--actions
+                      button.header__utility-btn.header__utility-btn--cart.variant-table__add-to-cart(type="button" aria-label="Добавить EA-AG в корзину")
+                        +svg('cart-icon', 24, 24)(class="icon")
+          .product-variants__tab-content.tab-pane.fade(
+            id="width-9",
+            role="tabpanel"
+          )
+            .product-variants__table.table-responsive-xl
+              table.variant-table
+                thead
+                  tr.variant-table__header-row
+                    th.variant-table__header Рулоны E-AG
+                    th.variant-table__header Толщина
+                    th.variant-table__header Ширина 1 м
+                      br
+                      span.variant-table__subtitle м2/рулон
+                    th.variant-table__header Ширина 1.2 м
+                      br
+                      span.variant-table__subtitle м2/рулон
+                    th.variant-table__header Цена
+                    th.variant-table__header Добавить к заказу
+                tbody
+                  // Row 1
+                  tr.variant-table__row
+                    td.variant-table__cell.variant-table__cell--name E-AG
+                    td.variant-table__cell 6 мм
+                    td.variant-table__cell 30
+                    td.variant-table__cell 36
+                    td.variant-table__cell.variant-table__cell--price 3226 ₽/м²
+                    td.variant-table__cell.variant-table__cell--actions
+                      button.header__utility-btn.header__utility-btn--cart.variant-table__add-to-cart(type="button" aria-label="Добавить EA-AG в корзину")
+                        +svg('cart-icon', 24, 24)(class="icon")
+                  // Row 2
+                  tr.variant-table__row
+                    td.variant-table__cell.variant-table__cell--name EA-AG
+                    td.variant-table__cell 6 мм
+                    td.variant-table__cell 60
+                    td.variant-table__cell 63
+                    td.variant-table__cell.variant-table__cell--price 3548 ₽/м²
+                    td.variant-table__cell.variant-table__cell--actions
+                      button.header__utility-btn.header__utility-btn--cart.variant-table__add-to-cart(type="button" aria-label="Добавить EA-AG в корзину")
+                        +svg('cart-icon', 24, 24)(class="icon")
+
+      include ../components/footer-form.pug

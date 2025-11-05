@@ -4,13 +4,14 @@ block variables
   - const pagetitle = "Контакты";
 
 block content
-  main.page
+  main.page.contacts-page
     .container
-      section.contacts-section
-        include ../components/bread
+      include ../components/bread
         // Заголовок (Title)
-        h1.contacts-section__title
-          span.highlight Контакты
+      h1.contacts-page__title.page__title
+        span.highlight Контакты
+      section.contacts-section
+
 
         // Карта (Map Placeholder)
         .contacts-section__map-wrapper
