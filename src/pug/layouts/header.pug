@@ -4,14 +4,15 @@ header.header.container
   .header__container
     //- Element: logo
     a.header__logo(href="#")
-      img.header__logo-img(src="../img/logo.svg" alt="LINEFLEX Logo")
+      img.header__logo-img(src="./img/logo.svg" alt="LINEFLEX Logo")
 
     //- Element: nav (Desktop)
     .header__nav
       nav.header__nav-desktop
         ul.header__nav-list
-          li.header__nav-item: a.header__nav-link(href="#") Дилерам
-          li.header__nav-item: a.header__nav-link(href="#") Документы
+          li.header__nav-item: a.header__nav-link(href="#") О нас
+          li.header__nav-item: a.header__nav-link(href="#") Преимущества
+          li.header__nav-item: a.header__nav-link(href="#") Область применения
           li.header__nav-item: a.header__nav-link(href="#") Контакты
 
     //- Element: actions/utilities group
@@ -34,7 +35,6 @@ header.header.container
           button.header__utility-btn.header__utility-btn--cart
             +svg('cart-icon', 24 ,24)(class="icon")
 
-          button.bottom-fixed__item.btn-offcanvas
           button.header__utility-btn.header__utility-btn--offcanvas(type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-offcanvas")
             +svg('menu-icon', 24 ,24)(class="icon")
 

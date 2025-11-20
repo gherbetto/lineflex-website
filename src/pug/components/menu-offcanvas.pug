@@ -4,12 +4,16 @@ include ../layouts/mixins.pug
   button.offcanvas__close(type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть")
     +svg('close-icon', 32)(class='icon icon--responsive')
   .offcanvas__content
+    .header__lang-selector
+      a.header__lang-link.header__lang-link--active(href="#") Ru
+      //- span.header__lang-separator /
+      a.header__lang-link(href="#") En
+
     ul.offcanvas__nav
-      li: a(href="#") Выполненные объекты
-      li: a(href="#") Доставка
-      li: a(href="#") Контакт
-      li: a(href="#") Монтаж
-      li: a(href="#") Контакты
+      li.offcanvas__nav-item: a(href="#") О нас
+      li.offcanvas__nav-item: a(href="#") Преимущества
+      li.offcanvas__nav-item: a(href="#") Область применения
+      li.offcanvas__nav-item: a(href="#") Контакты
 
 .offcanvas.offcanvas-end.catalog-offcanvas#catalog-offcanvas
 

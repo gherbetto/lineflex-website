@@ -1,0 +1,189 @@
+extends ../layouts/head.pug
+
+block variables
+  - const pagetitle = "Результаты фильтров";
+
+block content
+  main.page.filtered-page
+    .container
+      include ../components/bread
+        // Заголовок (Title)
+      h1.filtere-page__title.page__title
+        span.highlight=pagetitle
+
+      section.filtered-list
+        .insulation__cards
+          //- Карточка 1
+          a.insulation-card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title E-AG
+            .insulation-card__hover-overlay
+              .insulation-card__overlay-content
+                ul.insulation-card__overlay-list
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Толщина (мм)
+                    span.insulation-card__overlay-specs 6 9 13 19 25 32 50
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1,2м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+
+
+            .insulation-card__content
+              p.insulation-card__text С покрытием из алюминиевой фольги и упрочненной ПВХ-пленки
+              ul.insulation-card__list
+                li.insulation-card__list-item без нижней основы
+                li.insulation-card__list-item шучук
+            .insulation-card__image
+              img(src="img/card-1-bg.png" alt="E-AG")
+            .insulation-card__temperature
+              +svg('temp-icon', 16 ,16)(class="icon")
+              span -200...+110C
+            span.insulation-card__category Универсальный
+          //- Карточка 1
+          a.insulation-card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title E-AG
+            .insulation-card__hover-overlay
+              .insulation-card__overlay-content
+                ul.insulation-card__overlay-list
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Толщина (мм)
+                    span.insulation-card__overlay-specs 6 9 13 19 25 32 50
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1,2м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+
+
+            .insulation-card__content
+              p.insulation-card__text С покрытием из алюминиевой фольги и упрочненной ПВХ-пленки с самоклеющимся слоем С покрытием из алюминиевой фольги и упрочненной ПВХ-пленки с самоклеющимся слоем
+              ul.insulation-card__list
+                li.insulation-card__list-item без нижней основы
+                li.insulation-card__list-item шучук
+            .insulation-card__image
+              img(src="img/card-1-bg.png" alt="E-AG")
+            .insulation-card__temperature
+              +svg('temp-icon', 16 ,16)(class="icon")
+              span -200...+110C
+            span.insulation-card__category Универсальный
+          //- Карточка 1
+          a.insulation-card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title E-AG
+            .insulation-card__hover-overlay
+              .insulation-card__overlay-content
+                ul.insulation-card__overlay-list
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Толщина (мм)
+                    span.insulation-card__overlay-specs 6 9 13 19 25 32 50
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1,2м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+
+
+            .insulation-card__content
+              p.insulation-card__text С покрытием из алюминиевой фольги и упрочненной ПВХ-пленки
+              ul.insulation-card__list
+                li.insulation-card__list-item без нижней основы
+                li.insulation-card__list-item шучук
+            .insulation-card__image
+              img(src="img/card-1-bg.png" alt="E-AG")
+            .insulation-card__temperature
+              +svg('temp-icon', 16 ,16)(class="icon")
+              span -200...+110C
+            span.insulation-card__category Универсальный
+          //- Карточка 1
+          a.insulation-card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title E-AG
+            .insulation-card__hover-overlay
+              .insulation-card__overlay-content
+                ul.insulation-card__overlay-list
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Толщина (мм)
+                    span.insulation-card__overlay-specs 6 9 13 19 25 32 50
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1,2м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+
+
+            .insulation-card__content
+              p.insulation-card__text С покрытием из алюминиевой фольги и упрочненной ПВХ-пленки
+              ul.insulation-card__list
+                li.insulation-card__list-item без нижней основы
+                li.insulation-card__list-item шучук
+            .insulation-card__image
+              img(src="img/card-1-bg.png" alt="E-AG")
+            .insulation-card__temperature
+              +svg('temp-icon', 16 ,16)(class="icon")
+              span -200...+110C
+            span.insulation-card__category Универсальный
+          //- Карточка 1
+          a.insulation-card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title E-AG
+            .insulation-card__hover-overlay
+              .insulation-card__overlay-content
+                ul.insulation-card__overlay-list
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Толщина (мм)
+                    span.insulation-card__overlay-specs 6 9 13 19 25 32 50
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1,2м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+
+
+            .insulation-card__content
+              p.insulation-card__text С покрытием из алюминиевой фольги и упрочненной ПВХ-пленки
+              ul.insulation-card__list
+                li.insulation-card__list-item без нижней основы
+                li.insulation-card__list-item шучук
+            .insulation-card__image
+              img(src="img/card-1-bg.png" alt="E-AG")
+            .insulation-card__temperature
+              +svg('temp-icon', 16 ,16)(class="icon")
+              span -200...+110C
+            span.insulation-card__category Универсальный
+          //- Карточка 1
+          a.insulation-card(href="#")
+            .insulation-card__header
+              h3.insulation-card__title E-AG
+            .insulation-card__hover-overlay
+              .insulation-card__overlay-content
+                ul.insulation-card__overlay-list
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Толщина (мм)
+                    span.insulation-card__overlay-specs 6 9 13 19 25 32 50
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+                  li.insulation-card__overlay-item
+                    span.insulation-card__overlay-text Ширина рулона 1,2м (м2/рулон)
+                    span.insulation-card__overlay-specs 30 20 14 10 8 6 4
+
+
+            .insulation-card__content
+              p.insulation-card__text С покрытием из алюминиевой фольги и упрочненной ПВХ-пленки
+              ul.insulation-card__list
+                li.insulation-card__list-item без нижней основы
+                li.insulation-card__list-item шучук
+            .insulation-card__image
+              img(src="img/card-1-bg.png" alt="E-AG")
+            .insulation-card__temperature
+              +svg('temp-icon', 16 ,16)(class="icon")
+              span -200...+110C
+            span.insulation-card__category Универсальный

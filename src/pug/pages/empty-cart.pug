@@ -1,0 +1,21 @@
+extends ../layouts/head.pug
+
+block variables
+  - const pagetitle = "Корзина";
+
+block content
+  main.page.cart-page
+    .container
+      include ../components/bread
+        // Заголовок (Title)
+      h1.cart-page__title.page__title
+        span.highlight=pagetitle
+
+
+      // Когда пустая корзина виден этот блок
+      .empty-cart
+        h2.empty-cart__title Ваша корзина пуста
+        .empty-cart__icon-wrapper
+          img.empty-cart__icon(src='./img/empty-cart.svg' alt="Корзина пуста")
+        p.empty-cart__text Выберите товар, чтобы продолжить покупки
+        a.button.empty-cart__button(href="/catalog") В каталог

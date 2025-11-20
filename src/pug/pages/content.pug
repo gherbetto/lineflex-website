@@ -1,0 +1,136 @@
+extends ../layouts/head.pug
+
+block variables
+  - const pagetitle = "Стили контента";
+
+block content
+  main.page.content-page
+    .container
+      include ../components/bread
+        // Заголовок (Title)
+      .page-content
+        section.page-content__section
+          h1.page-content__title.page-content__title--level-1.page__title
+            span.highlight Заголовок 1
+          p.page-content__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique ac arcu eu finibus. Vivamus eget mi eu erat placerat pulvinar at non velit.
+          button.button.page-content__button Действие
+          p.page-content__text.page-content__text--small Maecenas cursus nisi sit amet arcu interdum semper. Vestibulum sed eros vitae neque mollis ullamcorper.
+
+        section.page-content__section
+          h2.page-content__title.page-content__title--level-2
+            span.highlight Заголовок 2
+          p.page-content__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique ac arcu eu finibus. Vivamus eget mi eu erat placerat pulvinar at non velit. Maecenas cursus nisi sit amet arcu interdum semper. Vestibulum sed eros vitae neque mollis ullamcorper.
+
+        section.page-content__section
+          h3.page-content__title.page-content__title--level-3 Заголовок 3 со списком в одну колонку
+          ul.page-content__list
+            li.page-content__list-item Элемент списка 1
+            li.page-content__list-item Элемент списка 2
+            li.page-content__list-item Элемент списка 3
+            li.page-content__list-item Элемент списка 4
+            li.page-content__list-item Элемент списка 5
+
+        section.page-content__section
+          h3.page-content__title.page-content__title--level-3 Заголовок 3 со списком в 2 колонки
+          ul.page-content__list.page-content__list--column
+            li.page-content__list-item Элемент списка 1
+            li.page-content__list-item Элемент списка 2
+            li.page-content__list-item Элемент списка 3
+            li.page-content__list-item Элемент списка 4
+            li.page-content__list-item Элемент списка 5
+            li.page-content__list-item Элемент списка 6
+
+        section.page-content__section
+          h3.page-content__title.page-content__title--level-3 Заголовок 3 со списком нумерованный в одну колонку
+          ol.page-content__ordered-list
+            li.page-content__ordered-list-item Бытовые системы охлаждения системы охлаждениясистемы охлаждения
+            li.page-content__ordered-list-item Промышленные системы охлаждения
+            li.page-content__ordered-list-item Холодильные установки
+            li.page-content__ordered-list-item Чиллеры (установки для охлаждения жидкости)
+            li.page-content__ordered-list-item Элемент списка 5
+
+        section.page-content__section
+          h3.page-content__title.page-content__title--level-3 Заголовок 3 со списком нумерованный в 2 колонки
+          .page-content__columns
+            ol.page-content__ordered-list.page-content__ordered-list--column
+              li.page-content__ordered-list-item Элемент списка 1
+              li.page-content__ordered-list-item Элемент списка 2
+              li.page-content__ordered-list-item Элемент списка 3
+              li.page-content__ordered-list-item Элемент списка 4
+              li.page-content__ordered-list-item Элемент списка 5
+              li.page-content__ordered-list-item Элемент списка 6
+
+        section.page-content__section
+          h3.page-content__title.page-content__title--level-3 Заголовок 3 с текстом
+          p.page-content__text Вспененный каучук используется для теплоизоляции трубопроводов, оборудования, резервуаров и других элементов в промышленных предприятиях каучук используется для теплоизоляции трубопроводов, оборудования, резервуаров и других элементов в промышленных предприятиях.
+          p.page-content__text Такая изоляция помогает снизить теплопотери и поддерживать необходимую температуру в системах  снизить теплопотери и поддерживать необходимую температуру в системах.
+          p.page-content__text Такая изоляция помогает снизить теплопотери и поддерживать необходимую температуру в системах  снизить теплопотери и поддерживать необходимую температуру в системах.
+        section.page-content__section
+          h2.page-content__title.page-content__title--level-1
+            span.highlight Заголовок с
+            |
+            | картинкой
+          .page-content__media-block
+            .page-content__image-placeholder
+              img.feature-list__image(src="./img/usage-1.jpg", alt=``)
+            .page-content__media-content
+              h4.page-content__media-title Заголовок
+              p.page-content__media-text Некоторые типы вспененного каучука обладают антибактериальными и антиаллеоргическими свойствами, что способствует созданию безопасной и гигиеничной среды для пациентов.
+              p.page-content__media-text Изоляция из вспененного каучука играет важную роль в обеспечении безопасности, комфорта и защиты медицинских помещений.
+
+        section.page-content__section
+          h2.page-content__title.page-content__title--level-3 Заголовок с отступом от картинки
+          p.page-content__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique ac arcu eu finibus. Vivamus eget mi eu erat placerat pulvinar at non velit.
+
+        section.page-content__section
+          h2.page-content__title.page-content__title--level-2
+            span.highlight Заголовок
+            |
+            | для таблицы
+          .page-content__table-wrapper
+            table.page-content__table
+              thead
+                tr
+                  th.page-content__table-header(colspan="3") Внутренний диаметр трубки
+                  th.page-content__table-header(colspan="6") Толщина стен
+
+                tr
+                  th.page-content__table-subheader Медь дюйм
+                  th.page-content__table-subheader Стальной дюйм
+                  th.page-content__table-subheader мм
+                  th.page-content__table-subheader 6 мм м/коробка
+                  th.page-content__table-subheader 9 мм м/коробка
+                  th.page-content__table-subheader 13 мм м/коробка
+                  th.page-content__table-subheader 19 мм м/коробка
+                  th.page-content__table-subheader 25 мм м/коробка
+                  th.page-content__table-subheader 32 мм м/коробка
+              tbody
+                tr
+                  td.page-content__table-data 1/4"
+                  td.page-content__table-data -
+                  td.page-content__table-data 6
+                  td.page-content__table-data 486
+                  td.page-content__table-data 342
+                  td.page-content__table-data 216
+                  td.page-content__table-data -
+                  td.page-content__table-data 1
+                  td.page-content__table-data 6
+                each row in [1,2,3,4,5,6,7,8]
+                  tr
+                    td.page-content__table-data 5/16"
+                    td.page-content__table-data 1/4"
+                    td.page-content__table-data 8
+                    td.page-content__table-data 432
+                    td.page-content__table-data 306
+                    td.page-content__table-data 198
+                    td.page-content__table-data -
+                    td.page-content__table-data 5
+                    td.page-content__table-data 9
+              caption.page-content__table-subtitle Подпись под таблицей
+
+
+          p.page-content__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique ac arcu eu finibus. Vivamus eget mi eu erat placerat pulvinar at non velit. Maecenas cursus nisi sit amet arcu interdum semper. Vestibulum sed eros vitae neque mollis ullamcorper.
+
+        section.page-content__section
+          .page-content__large-image
+            img.feature-list__image(src="./img/usage-1.jpg", alt=``)

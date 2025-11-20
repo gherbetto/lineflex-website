@@ -1,13 +1,135 @@
 include ../layouts/mixins.pug
 
+.sticky-sentinel
 .header-bottom
   .container
     .header-bottom__container
-      button.button.header-bottom__catalog-button(data-menu='1' title='Меню каталога с продункцией')
-      button.button.header-bottom__filter-button(data-menu='2' title='Фильтр по характеристикам товаров')
-      form.search-block.header-bottom__form(method='GET' action='https://kflex.ru/shop/')
-        input(type='hidden' name='module' value='shop')
-        input(type='hidden' name='action' value='search')
-        input.text-input.search-block__input(type='text' name='phrase' placeholder='Поиск категорий или товаров. Например: ST' title='Поиск категорий или товаров. Например: ST')
+      // Catalog button with dropdown
+      .header-bottom__catalog
+        button.button.header-bottom__catalog-button(data-menu='1' title='Меню каталога с продукцией')
+          +svg('grid-menu-icon', 24 ,24)(class="icon")
+          | Каталог
+        .header-bottom__dropdown
+          .header-bottom__catalog-dropdown
+            ul.header-bottom__catalog-items
+              li.header-bottom__catalog-item(data-category="category1")
+                a.header-bottom__catalog-item-link(href="#") Рулоны
+                +svg('arrow-icon', 16 ,16)(class="icon")
+              li.header-bottom__catalog-item(data-category="category2")
+                a.header-bottom__catalog-item-link(href="#") Трубки
+                +svg('arrow-icon', 16 ,16)(class="icon")
+              li.header-bottom__catalog-item(data-category="category3")
+                a.header-bottom__catalog-item-link(href="#") Трубки
+                +svg('arrow-icon', 16 ,16)(class="icon")
+
+            .header-bottom__catalog-subitems-wrapper
+              .header-bottom__catalog-subitems#category1
+                .header-bottom__catalog-subitem
+                  a.header-bottom__catalog-subitem-link(href="#") E-AG
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-2-bg.png" alt="Подпродукт 1.1")
+                .header-bottom__catalog-subitem
+                  a.header-bottom__catalog-subitem-link Подпродукт 1.2
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-3-bg.png" alt="Подпродукт 1.2")
+                .header-bottom__catalog-subitem
+                  a.header-bottom__catalog-subitem-link Подпродукт 2.1
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-1-bg.png" alt="Подпродукт 1.3")
+
+              .header-bottom__catalog-subitems#category2
+                .header-bottom__catalog-subitem
+                  a.header-bottom__catalog-subitem-link(href="#") 2.1
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-2-bg.png" alt="Подпродукт 2.1")
+                .header-bottom__catalog-subitem
+                  a.header-bottom__catalog-subitem-link Подпродукт 2.2
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-1-bg.png" alt="Подпродукт 2.2")
+                .header-bottom__catalog-subitem
+                  a.header-bottom__catalog-subitem-link Подпродукт 2.3
+                  +svg('arrow-icon', 16 ,16)(class="icon")
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-3-bg.png" alt="Подпродукт 2.3")
+
+              .header-bottom__catalog-subitems#category3
+                .header-bottom__catalog-subitem.header-bottom__catalog-item-l2(data-target="category3-1")
+                  a.header-bottom__catalog-subitem-link(href="#") 3.1
+                  +svg('arrow-icon', 16 ,16)(class="icon")
+                .header-bottom__catalog-subitem
+                  a.header-bottom__catalog-subitem-link Подпродукт 3.2
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-1-bg.png" alt="Подпродукт 3.2")
+                .header-bottom__catalog-subitem.header-bottom__catalog-item-l2(data-target="category3-1")
+                  a.header-bottom__catalog-subitem-link Подпродукт 3.3
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-1-bg.png" alt="Подпродукт 3.2")
+
+            .header-bottom__catalog-subitems-l3-wrapper
+              // Subitems for Category 3.1
+              .header-bottom__catalog-subitems-l3#category3-1
+                .header-bottom__catalog-subitem.header-bottom__catalog-subitem-l3
+                  a.header-bottom__catalog-subitem-link Подпродукт 3.2
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-1-bg.png" alt="Подпродукт 3.2")
+                .header-bottom__catalog-subitem.header-bottom__catalog-subitem-l3
+                  a.header-bottom__catalog-subitem-link Подпродукт 3.2
+                  .header-bottom__catalog-preview
+                    img.header-bottom__catalog-image(src="./img/card-1-bg.png" alt="Подпродукт 3.2")
+
+      // Filter button with dropdown
+      .header-bottom__filter
+        button.button.header-bottom__filter-button(data-menu='2' title='Фильтр по характеристикам товаров')
+          +svg('slider-icon', 24 ,24)(class="icon")
+          | Фильтр
+        .header-bottom__dropdown
+          .header-bottom__filter-dropdown
+            .header-bottom__filter-groups
+              .header-bottom__filter-group
+                .header-bottom__filter-title толщины
+                .header-bottom__filter-options
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 1
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 2
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 3
+              .header-bottom__filter-group
+                .header-bottom__filter-title толщины
+                .header-bottom__filter-options
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 1
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 2
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 3
+              .header-bottom__filter-group
+                .header-bottom__filter-title толщины
+                .header-bottom__filter-options
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 1
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 2
+                  label.header-bottom__filter-option
+                    input.header-bottom__filter-checkbox(type="checkbox")
+                    span.header-bottom__filter-label Опция 3
+            .header-bottom-filter-actions
+              button.button Показать товары
+      form.search-block.header-bottom__form(method='GET' action='')
+        input.text-input.search-block__input(type='text' name='phrase' placeholder='Поиск категорий или товаров.' title='Поиск категорий или товаров. Например: ST')
         button.search-block__btn(title='Найти' type='submit')
-      button#show-card-btn-1.btn.header-bottom__card-btn.in-cart(title='Корзина' disabled='') 0&nbsp;&tcy;&ocy;&vcy;&acy;&rcy;&ocy;&vcy;
+          +svg('search-icon', 24 ,24)(class="icon")
+
+      .header-bottom__actions
+        button.header-bottom__cart.header__utility-btn.header__utility-btn--cart
+          +svg('cart-icon', 24 ,24)(class="icon")
+
+

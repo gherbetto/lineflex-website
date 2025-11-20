@@ -154,5 +154,31 @@
 @mixin font-offcanvas {
   font-style: normal;
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-size: clamp(
+    1rem,
+    0.9462025316455697rem + 0.25316455696202533vw,
+    1.25rem
+  );
+}
+
+@mixin footer-btn-main {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.8481012658227848rem + 0.12658227848101267vw,
+    1rem
+  );
+}
+@mixin footer-btn-size {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.625rem;
+  font-size: clamp(
+    0.625rem,
+    0.5981012658227848rem + 0.12658227848101267vw,
+    0.75rem
+  );
 }

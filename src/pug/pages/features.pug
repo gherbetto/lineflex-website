@@ -1,0 +1,18 @@
+extends ../layouts/head.pug
+
+block variables
+  - const pagetitle = "Область применения";
+
+block content
+  main.page.features-page
+    .container
+      include ../components/bread
+        // Заголовок (Title)
+      h1.features-page__title.page__title
+        span.highlight=pagetitle
+
+      section.feature-list
+        +feature-item("Строительство", './img/usage-1.jpg', false)
+        +feature-item("Промышленный холод",'./img/usage-2.jpg', true)
+        +feature-item("Медицина",'./img/usage-3.jpg', false)
+        +feature-item("Промышленность",'./img/usage-4.jpg', true)

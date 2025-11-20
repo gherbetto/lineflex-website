@@ -1,0 +1,40 @@
+extends ../layouts/head.pug
+
+block variables
+  - const pagetitle = "Преимущества";
+
+block content
+  main.page.benefits-page
+    .container
+      include ../components/bread
+        // Заголовок (Title)
+      h1.benefits-page__title.page__title
+        span.highlight=pagetitle
+
+      section.benefits-section
+        .benefits-section__benefit
+          .benefits-section__img-wrapper
+            img.benefits-section__icon(src="./img/benefits-1.svg" alt="" srcset="")
+          .benefits-section__text
+            h2.benefits-section__title Длительный срок службы
+            p.benefits-section__description Вспененный каучук обладает высокой устойчивостью к различным физическим воздействиям. Он не подвержен коррозии, гниению или разрушению под воздействием влаги, масел, кислот и других агрессивных сред. Это делает его долговечным и надежным материалом для теплоизоляции.
+        .benefits-section__benefit
+          .benefits-section__img-wrapper
+            img.benefits-section__icon(src="./img/benefits-2.svg" alt="" srcset="")
+          .benefits-section__text
+            h2.benefits-section__title Длительный срок службы
+            p.benefits-section__description Вспененный каучук обладает высокой устойчивостью к различным физическим воздействиям. Он не подвержен коррозии, гниению или разрушению под воздействием влаги, масел, кислот и других агрессивных сред. Это делает его долговечным и надежным материалом для теплоизоляции.
+        .benefits-section__benefit
+          .benefits-section__img-wrapper
+            img.benefits-section__icon(src="./img/benefits-3.svg" alt="" srcset="")
+          .benefits-section__text
+            h2.benefits-section__title Длительный срок службы
+            p.benefits-section__description Вспененный каучук обладает высокой устойчивостью к различным физическим воздействиям. Он не подвержен коррозии, гниению или разрушению под воздействием влаги, масел, кислот и других агрессивных сред. Это делает его долговечным и надежным материалом для теплоизоляции.
+        .benefits-section__benefit
+          .benefits-section__img-wrapper
+            img.benefits-section__icon(src="./img/benefits-4.svg" alt="" srcset="")
+          .benefits-section__text
+            h2.benefits-section__title Длительный срок службы
+            p.benefits-section__description Вспененный каучук обладает высокой устойчивостью к различным физическим воздействиям. Он не подвержен коррозии, гниению или разрушению под воздействием влаги, масел, кислот и других агрессивных сред. Это делает его долговечным и надежным материалом для теплоизоляции.
+
+

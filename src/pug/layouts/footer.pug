@@ -4,10 +4,11 @@ footer.footer
     .footer__wrapper
       .footer__top
         a.footer__logo(href="")
-          img.footer__logo-img(src="../img/logo.svg" alt="LINEFLEX Logo")
+          img.footer__logo-img(src="./img/logo.svg" alt="LINEFLEX Logo")
         nav.footer__nav
-          a.footer__nav-item(href="#") Дилерам
-          a.footer__nav-item(href="#") Документы
+          a.footer__nav-item(href="#") О нас
+          a.footer__nav-item(href="#") Преимущества
+          a.footer__nav-item(href="#") Область применения
           a.footer__nav-item(href="#") Контакты
 
         .footer__contacts
@@ -25,6 +26,13 @@ footer.footer
             .footer__contacts-text(href="#") Пн-Пт 09.00-18.00,
               br
               | Сб 10.00-13.00
+        .footer__cta
+          a.button.footer__cta-btn(href="#")
+            span.footer__cta-btn-content
+              span
+                +svg('download-icon', 16 ,16)(class="icon")
+                | Скачать каталог
+              span.footer__cta-file-size (pdf 1.67 MB)
       .footer__bottom
         .footer__copyright
           span © «ПРМ групп» 2025

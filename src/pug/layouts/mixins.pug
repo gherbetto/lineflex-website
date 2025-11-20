@@ -18,3 +18,25 @@ mixin result-item(imageSrc, imageAlt, title, link, description, showCartButton =
       .result-item__actions
         button.header__utility-btn.header__utility-btn--cart.result-item__add-to-cart(type="button")
           +svg('cart-icon', 24, 24)(class="icon")
+
+
+mixin feature-item(title,imageSrc, isReverse)
+  .feature-list__item-wrapper
+    .feature-list__item(class=isReverse ? 'feature-list__item--reverse' : '')
+      .feature-list__content
+        h2.feature-list__title= title
+        if title !== "Промышленный холод"
+          p.feature-list__text
+            | В теплоизоляции зданий и сооружений играет важную роль теплоизоляция из вспененного каучука.
+          p.feature-list__text
+            | Она применяется для изоляции трубопроводов, кондиционеров, систем вентиляции и других архитектурных элементов.
+
+        //- Optional: Check if a list is needed (like in "Промышленный холод")
+        if title === "Промышленный холод"
+          ul.feature-list__detail-list
+            li.feature-list__list-item Бытовые системы охлаждения
+            li.feature-list__list-item Промышленные системы охлаждения
+            li.feature-list__list-item Холодильные установки
+
+      .feature-list__media
+        img.feature-list__image(src=imageSrc, alt=`Изображение для ${title}`)
