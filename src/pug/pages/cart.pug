@@ -10,112 +10,126 @@ block content
       h1.cart-page__title.page__title
         span.highlight=pagetitle
 
-      form.cart(action="/submit-order" method="POST")
+      form.cart(action="" method="POST")
         h2.cart__title Товары
 
-        //- BEM Element: cart__actions (Controls above the table)
-        .cart__actions
-          button.cart__action-button.cart__action-button--delete(type="button") Удалить выбранные
-          label.cart__action-label.cart__action-label--select-all
-            input.cart__action-checkbox(type="checkbox" checked)
-            | Выбрать все
+        .cart__table-wrapper
+          // BEM Element: cart__actions (Controls above the table)
+          .cart__actions
+            button#deleteSelectedBtn.cart__action-button.cart__action-button--delete(type="button") Удалить выбранные
+            label.cart__action-label.cart__action-label--select-all(for='selectAllCheckbox')
+              input#selectAllCheckbox.cart__action-checkbox.form-check-input(type="checkbox" checked)
+              | Выбрать все
 
-        //- BEM Element: cart__table (The main data table)
-        table.cart__table.variant-table
-          thead.cart__table-head
-            tr.variant-table__header-row
-              th.cart__table-header
-              th.cart__table-header Рулоны E-AG
-              th.cart__table-header Толщина
-              th.cart__table-header Ширина 1 м/м2/рулон
-              th.cart__table-header Ширина 1,2 м/м2/рулон
-              th.cart__table-header Цена
-              th.cart__table-header Количество
-              th.cart__table-header
+          // BEM Element: cart__table (The main data table)
+          table.cart__table
+            thead.cart__table-head
+              tr.cart__header-row
+                th.cart__table-header(colspan="2") Рулоны E-AG
+                th.cart__table-header Толщина
+                th.cart__table-header Ширина 1 м м2/рулон
+                th.cart__table-header Ширина 1,2м м2/рулон
+                th.cart__table-header Цена
+                th.cart__table-header Количество
 
-          tbody.cart__table-body
-            //- Item 1 (6 мм, 3226 Р/м²)
-            tr.cart-item
-              td.cart-item__cell.cart-item__cell--checkbox
-                label
-                  input.cart-item__checkbox(type="checkbox" name="selected_items[]" value="EAG-6mm-3226" checked)
-              td.cart-item__cell.cart-item__cell--name E-AG
-              td.cart-item__cell 6 мм
-              td.cart-item__cell 30
-              td.cart-item__cell 36
-              td.cart-item__cell 3226 Р/м²
-              td.cart-item__cell.cart-item__cell--quantity
-                .cart-item__quantity-control
-                  button.cart-item__quantity-btn.cart-item__quantity-btn--minus(type="button") -
-                  input.cart-item__quantity-input(type="number" value="1" min="1" name="quantity_EAG_3226" data-price="3226")
-                  button.cart-item__quantity-btn.cart-item__quantity-btn--plus(type="button") +
-              td.cart-item__cell.cart-item__cell--remove
-                button.cart-item__remove-btn(type="button") ×
+            tbody.cart__table-body(id="cartItemsBody")
+              // Item 1 (6 мм, 3226 Р/м²)
+              tr.cart-item(id="item_1")
+                td.cart-item__cell.cart-item__cell--checkbox
+                  label.form-check-label(for='checkbox_1')
+                    input#checkbox_1.form-check-input.cart-item__checkbox(type="checkbox" name="selected_items[]" value="EAG-6mm-3226" checked)
+                td.cart-item__cell.cart-item__cell--name E-AG
+                td.cart-item__cell 6 мм
+                td.cart-item__cell 30
+                td.cart-item__cell 36
+                td.cart-item__cell 3226 Р/м²
+                td.cart-item__cell.cart-item__cell--quantity
+                  .cart-item__quantity-control
+                    button.quantity-minus.cart-item__quantity-btn.cart-item__quantity-btn--minus(type="button") -
+                    input.quantity-input.cart-item__quantity-input(type="number" value="1" min="1" name="quantity_EAG_3226" data-price="3226")
+                    button.quantity-plus.cart-item__quantity-btn.cart-item__quantity-btn--plus(type="button") +
+                td.cart-item__cell.cart-item__cell--remove
+                  button.cart-item__remove-btn(type="button")
+                    +svg('close-icon', 16)(class='icon icon--responsive')
 
-            //- Item 2 (6 мм, 3548 Р/м²)
-            tr.cart-item
-              td.cart-item__cell.cart-item__cell--checkbox
-                label
-                  input.cart-item__checkbox(type="checkbox" name="selected_items[]" value="EAG-6mm-3548" checked)
-              td.cart-item__cell.cart-item__cell--name E-AG
-              td.cart-item__cell 6 мм
-              td.cart-item__cell 60
-              td.cart-item__cell 63
-              td.cart-item__cell 3548 Р/м²
-              td.cart-item__cell.cart-item__cell--quantity
-                .cart-item__quantity-control
-                  button.cart-item__quantity-btn.cart-item__quantity-btn--minus(type="button") -
-                  input.cart-item__quantity-input(type="number" value="2" min="1" name="quantity_EAG_3548" data-price="3548")
-                  button.cart-item__quantity-btn.cart-item__quantity-btn--plus(type="button") +
-              td.cart-item__cell.cart-item__cell--remove
-                button.cart-item__remove-btn(type="button") ×
+              // Item 2 (6 мм, 3226 Р/м²)
+              tr.cart-item(id="item_2")
+                td.cart-item__cell.cart-item__cell--checkbox
+                  label.form-check-label(for='checkbox_2')
+                    input#checkbox_2.form-check-input.cart-item__checkbox(type="checkbox" name="selected_items[]" value="EAG-6mm-3226" checked)
+                td.cart-item__cell.cart-item__cell--name E-AG
+                td.cart-item__cell 6 мм
+                td.cart-item__cell 30
+                td.cart-item__cell 36
+                td.cart-item__cell 3226 Р/м²
+                td.cart-item__cell.cart-item__cell--quantity
+                  .cart-item__quantity-control
+                    button.quantity-minus.cart-item__quantity-btn.cart-item__quantity-btn--minus(type="button") -
+                    input.quantity-input.cart-item__quantity-input(type="number" value="1" min="1" step="1" name="quantity_EAG_3226" data-price="3226")
+                    button.quantity-plus.cart-item__quantity-btn.cart-item__quantity-btn--plus(type="button") +
+                td.cart-item__cell.cart-item__cell--remove
+                  button.cart-item__remove-btn(type="button")
+                    +svg('close-icon', 24)(class='icon icon--responsive')
 
-            //- Item 3 (9 мм, 4559 Р/м²)
-            tr.cart-item
-              td.cart-item__cell.cart-item__cell--checkbox
-                label
-                  input.cart-item__checkbox(type="checkbox" name="selected_items[]" value="EAG-9mm-4559" checked)
-              td.cart-item__cell.cart-item__cell--name E-AG
-              td.cart-item__cell 9 мм
-              td.cart-item__cell 60
-              td.cart-item__cell 63
-              td.cart-item__cell 4559 Р/м²
-              td.cart-item__cell.cart-item__cell--quantity
-                .cart-item__quantity-control
-                  button.cart-item__quantity-btn.cart-item__quantity-btn--minus(type="button") -
-                  input.cart-item__quantity-input(type="number" value="22" min="1" name="quantity_EAG_4559" data-price="4559")
-                  button.cart-item__quantity-btn.cart-item__quantity-btn--plus(type="button") +
-              td.cart-item__cell.cart-item__cell--remove
-                button.cart-item__remove-btn(type="button") ×
+              // Item 3 (9 мм, 4559 Р/м²)
+              tr.cart-item(id="item_3")
+                td.cart-item__cell.cart-item__cell--checkbox
+                  label.form-check-label(for='checkbox_3')
+                    input#checkbox_3.form-check-input.cart-item__checkbox(type="checkbox" name="selected_items[]" value="EAG-6mm-3226" checked)
+                td.cart-item__cell.cart-item__cell--name E-AG
+                td.cart-item__cell 9 мм
+                td.cart-item__cell 60
+                td.cart-item__cell 63
+                td.cart-item__cell 4559 Р/м²
+                td.cart-item__cell.cart-item__cell--quantity
+                  .cart-item__quantity-control
+                    button.quantity-minus.cart-item__quantity-btn.cart-item__quantity-btn--minus(type="button") -
+                    input.quantity-input.cart-item__quantity-input(type="number" value="22" min="1" name="quantity_EAG_4559" data-price="4559")
+                    button.quantity-plus.cart-item__quantity-btn.cart-item__quantity-btn--plus(type="button") +
+                td.cart-item__cell.cart-item__cell--remove
+                  button.cart-item__remove-btn(type="button")
+                    +svg('close-icon', 24)(class='icon icon--responsive')
 
-        //- BEM Element: cart__summary (Total section)
-        .cart__summary
-          .cart__summary-text Итого
-          .cart__summary-total
-            .cart__summary-total-quantity
-              | Количество:
-              span.cart__summary-value.cart__summary-value--count 25 шт
-            .cart__summary-total-price
-              span.cart__summary-value.cart__summary-value--price 215 995 Р
-              //- Hidden input to send the total price to the server if needed
-              input(type="hidden" name="total_price" value="215995")
-              //- Hidden input to send the total item count to the server if needed
-              input(type="hidden" name="total_items" value="25")
+          // BEM Element: cart__summary (Total section)
+          .cart__summary
+            .cart__summary-text Итого
+            .cart__summary-total
+              .cart__summary-total-quantity
+                span.cart__summary-value.cart__summary-value--title Количество:
+                span#totalItemsCount.cart__summary-value.cart__summary-value--count 25 шт
+              .cart__summary-total-price
+                span.cart__summary-value.cart__summary-value--title Цена:
+                span#totalPrice.cart__summary-value.cart__summary-value--price 215 995 Р
+                input(type="hidden" name="total_price" id="totalPriceHidden" value="215995")
+                input(type="hidden" name="total_items" id="totalItemsHidden" value="25")
 
-        //- BEM Element: application-form (The checkout/application form)
         .application-form
-          h2.application-form__title Оформить заявку
+          h3.footer-form__title.application-form__title
+            span.highlight.highlight--beginning Оформить
+            |
+            |заявку
+          .application-form__wrapper
+            .application-form__fields
+              .form-floating
+                input.form-control(type="text" placeholder="Ваше имя" name="user_name" required)
+                label Ваше имя
+              .form-floating
+                input.form-control(type="email" placeholder="Эл. почта" name="user_email" required)
+                label Эл. почта
+              .form-floating
+                input.form-control(type="text" placeholder="Ваш телефон" name="user_phone" required)
+                label Ваш телефон
+              .form-floating
+                textarea.form-control.application-form__input--textarea(placeholder="Сообщение" name="user_message" required)
+                label Сообщение
+              .footer-form__form-check
+                input.form-check-input#colab-form-checkbox(type="checkbox" name="" required)
+                label.form-check-label(for="colab-form-checkbox")
+                  | Согласен с
+                  |
+                  a.user-agreement-link(href="/user-agreement" target="_blank") обработкой персональных данных
 
-          .application-form__fields
-            input.application-form__input(type="text" placeholder="Ваше имя" name="user_name" required)
-            input.application-form__input(type="email" placeholder="Эл. почта" name="user_email" required)
-            input.application-form__input(type="tel" placeholder="Ваш телефон" name="user_phone" required)
-            textarea.application-form__input.application-form__input--textarea(placeholder="Сообщение" name="user_message")
+            button.button.form-button.application-form__submit-btn(type="submit") Оформить заявку
 
-          label.application-form__privacy-label
-            input.application-form__privacy-checkbox(type="checkbox" required)
-            | Указывая номер телефона, вы соглашаетесь с обработкой персональных данных
 
-          //- The submit button for the entire form
-          button.application-form__submit-btn(type="submit") Оформить заявку
-
+  script.
