@@ -1,12 +1,12 @@
 include mixins.pug
-//- BEM Block: header
+
 header.header.container
   .header__container
-    //- Element: logo
+    // logo
     a.header__logo(href="#")
       img.header__logo-img(src="./img/logo.svg" alt="LINEFLEX Logo")
 
-    //- Element: nav (Desktop)
+    // nav (Desktop)
     .header__nav
       nav.header__nav-desktop
         ul.header__nav-list
@@ -14,30 +14,33 @@ header.header.container
           li.header__nav-item: a.header__nav-link(href="#") Преимущества
           li.header__nav-item: a.header__nav-link(href="#") Область применения
           li.header__nav-item: a.header__nav-link(href="#") Контакты
+          li.header__nav-item
+            button.header__nav-link.dropdown-toggle(type="button" data-bs-toggle="dropdown" aria-expanded="false") Преимущества
+            ul.dropdown-menu
+              li.dropdown-item: a.dropdown-link.header__nav-link(href="#") Наши преимущества
+              li.dropdown-item: a.dropdown-link(href="#") Сотрудничество
+              li.dropdown-item: a.dropdown-link(href="#") Вакансии
 
-    //- Element: actions/utilities group
     .header__actions
       .header__actions-top
-        //- Sub-Element: language selector
         .header__lang-selector
           a.header__lang-link.header__lang-link--active(href="#") Ru
-          //- span.header__lang-separator /
           a.header__lang-link(href="#") En
 
       .header__actions-bottom
-        //- Sub-Element: contact info
         .header__contact
           a.header__contact-phone(href="tel:+73472460622") +7 (347) 246-06-22
           span.header__contact-city Уфа
 
-        //- Sub-Element: utility icons (Cart/Request)
+        // when adding .header__utility-btn--cart-full(cart counter appears)
         .header__utility-icons
-          button.header__utility-btn.header__utility-btn--cart
+          button.header__utility-btn.header__utility-btn--cart.header__utility-btn--cart-full
             +svg('cart-icon', 24 ,24)(class="icon")
+            span.cart-counter 23
 
           button.header__utility-btn.header__utility-btn--offcanvas(type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-offcanvas")
             +svg('menu-icon', 24 ,24)(class="icon")
 
-        button.button.header__cta-btn Отправить заявку
+        button(type="button" data-bs-toggle="modal" data-bs-target="#callback-modal").button.header__cta-btn Отправить заявку
 
   .header__logo-text ООО «ПРМ групп» официальный дистрибьютор

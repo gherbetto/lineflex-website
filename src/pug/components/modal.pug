@@ -1,6 +1,32 @@
 include ../layouts/mixins.pug
-.my-modal.callback-modal#callback-modal
-    button.my-modal__close-button(data-modal-close)
-        +svg('close-icon', 28)(class='close-icon')
-    .my-modal__content 
-        | 123213
+
+.modal.fade.callback-modal#callback-modal(tabindex='-1' aria-labelledby='callback-modal')
+  .modal-dialog.modal-dialog-centered
+    .modal-content
+      button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Закрыть')
+
+      .modal-header
+        h2.modal__heading Отправить заявку
+      .modal-body
+        p.modal__subtitle Оставьте контактные данные и мы свяжемся с Вами в ближайшее время
+
+        form.modal__form(action="")
+          .form-floating
+            input.form-control(type="text" placeholder="Ф.И.О")
+            label Ваше имя
+          .form-floating
+            input.form-control(type="text" placeholder="Телефон" required)
+            label Ваш телефон
+          .form-floating
+            input.form-control(type="email" placeholder="Эл. почта" required)
+            label Эл. почта
+          .form-floating
+            textarea.form-control(placeholder="Введите сообщение" style="height: 138px" required)
+            label Сообщение
+          .form-check
+            input.form-check-input#callback-modal-checkbox(type="checkbox" name="" required)
+            label.form-check-label(for="callback-modal-checkbox")
+              | Указывая номер телефона, вы соглашаетесь с
+              |
+              a.user-agreement-link(href="/user-agreement" target="_blank") обработкой персональных данных
+          button.button.form-button Отправить
