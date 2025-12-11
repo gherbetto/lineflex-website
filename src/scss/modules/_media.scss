@@ -23,6 +23,10 @@
 }
 
 @media (max-width: $sm-break) and (min-width: 0px) {
+  .offcanvas__close {
+    top: auto;
+    bottom: 16px;
+  }
   .bottom-fixed {
     display: flex;
   }

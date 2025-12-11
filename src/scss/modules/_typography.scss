@@ -37,11 +37,23 @@
   font-size: clamp(2rem, 1.8924050632911393rem + 0.5063291139240507vw, 2.5rem);
 }
 
-@mixin font-title-2 {
+@mixin font-title-2-medium {
   font-family: $font-secondary;
   line-height: $line-height-secondary;
   font-style: normal;
   font-weight: 500;
+  font-size: 1.25rem;
+  font-size: clamp(
+    1.25rem,
+    1.1962025316455696rem + 0.25316455696202533vw,
+    1.5rem
+  );
+}
+@mixin font-title-2-bold {
+  font-family: $font-secondary;
+  line-height: $line-height-secondary;
+  font-style: normal;
+  font-weight: 700;
   font-size: 1.25rem;
   font-size: clamp(
     1.25rem,

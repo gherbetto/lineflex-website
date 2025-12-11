@@ -10,10 +10,28 @@ include ../layouts/mixins.pug
       a.header__lang-link(href="#") En
 
     ul.offcanvas__nav
-      li.offcanvas__nav-item: a(href="#") О нас
-      li.offcanvas__nav-item: a(href="#") Преимущества
-      li.offcanvas__nav-item: a(href="#") Область применения
-      li.offcanvas__nav-item: a(href="#") Контакты
+      li.offcanvas__nav-item: a.offcanvas__nav-link(href="#") О нас
+      li.offcanvas__nav-item: a.offcanvas__nav-link(href="#") Преимущества
+      li.accordion.accordion-flush
+        .accordion-item
+          button.offcanvas__nav-item.offcanvas__accordion-button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne') Конференц залы
+          #flush-collapseOne.accordion-collapse.collapse(data-bs-parent="#accordionFlush")
+            ul.accordion-body
+              li.dropdown-item: a.offcanvas__accordion-link(href="#") Сайты
+              li.dropdown-item: a.offcanvas__accordion-link(href="#") Фирменные стили
+              li.dropdown-item: a.offcanvas__accordion-link(href="#") Иллюстрации
+              li.dropdown-item: a.offcanvas__accordion-link(href="#") Инфографика
+              li.dropdown-item: a.offcanvas__accordion-link(href="#") Продвижение сайтов
+      li.accordion.accordion-flush
+        .accordion-item
+          button.offcanvas__nav-item.offcanvas__accordion-button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseTwo' aria-expanded='false' aria-controls='flush-collapseTwo') Акции
+          #flush-collapseTwo.accordion-collapse.collapse(data-bs-parent="#accordionFlush")
+            ul.accordion-body
+              li.dropdown-item: a.offcanvas__accordion-link(href="#") Наши преимущества
+              li.dropdown-item: a.offcanvas__accordion-link(href="#") Сотрудничество
+              li.dropdown-item: a.offcanvas__accordion-link(href="#") Локации
+      li.offcanvas__nav-item: a.offcanvas__nav-link(href="#") Область применения
+      li.offcanvas__nav-item: a.offcanvas__nav-link(href="#") Контакты
 
 .offcanvas.offcanvas-end.catalog-offcanvas#catalog-offcanvas
 
@@ -36,3 +54,57 @@ include ../layouts/mixins.pug
       li: a(href="#") Контакт
       li: a(href="#") Монтаж
       li: a(href="#") Контакты
+
+.offcanvas.offcanvas-end.filter-offcanvas#filter-offcanvas
+
+  button.offcanvas__close(type="button" data-bs-dismiss="offcanvas" aria-label="Закрыть")
+    +svg('close-icon', 32)(class='icon icon--responsive')
+
+  .offcanvas__content.filter-offcanvas__content
+    form.filter-offcanvas__form(action="/your/submission/endpoint" method="get")
+      // Filter Group 1
+      .header-bottom__filter-group
+        .header-bottom__filter-title толщины
+        .header-bottom__filter-options
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 1")
+            span.form-check-label.header-bottom__filter-label Опция 1
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 2")
+            span.form-check-label.header-bottom__filter-label Опция 2
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 3")
+            span.form-check-label.header-bottom__filter-label Опция 3
+
+      // Filter Group 2
+      .header-bottom__filter-group
+        .header-bottom__filter-title E-AG
+        .header-bottom__filter-options
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 1")
+            span.form-check-label.header-bottom__filter-label Опция 2 в аоолл ваылп ылатлыдывп
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 2")
+            span.form-check-label.header-bottom__filter-label Опция 2
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 3")
+            span.form-check-label.header-bottom__filter-label Опция 2 в аоолл ылатлыдывп
+
+
+      .header-bottom__filter-group
+        .header-bottom__filter-title E-AG
+        .header-bottom__filter-options
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 1")
+            span.form-check-label.header-bottom__filter-label Опция
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 2")
+            span.form-check-label.header-bottom__filter-label Опция 2 в аоолл ваылп ылатлыдывп
+          label.header-bottom__filter-option
+            input(type="checkbox" class="form-check-input header-bottom__filter-checkbox" name="толщины_Опция 3")
+            span.form-check-label.header-bottom__filter-label Опция 2 в аоолл ылатлыдывп
+
+      .header-bottom__filter-actions
+        button.button(type="submit" class="button") Показать товары
+        button.button.button--secondary Сбросить
+

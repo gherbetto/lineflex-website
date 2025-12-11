@@ -200,7 +200,7 @@
   transition: $trans;
   text-decoration: none; // Important for using <a> tags as buttons
 
-  &:focus {
+  &:focus-visible {
     box-shadow: 0 0 0 0.25rem rgba(#085f34, 0.35); /* Adjust box-shadow for the focus ring */
   }
 
@@ -260,7 +260,7 @@
   border: none;
   background-color: var(--color-gray-4);
 
-  &:focus {
+  &:focus-visible {
     // border-color: var(--color-primary); /* Change border color on focus */
     background-color: var(--color-gray-4);
     box-shadow: 0 0 0 0.25rem rgba(#085f34, 0.35); /* Adjust box-shadow for the focus ring */
@@ -285,7 +285,7 @@
 
 /* FEATURES */
 .offcanvas {
-  padding: 30px 32px;
+  padding: 30px 32px 66px;
   width: 300px !important;
 
   &__content {
@@ -310,6 +310,8 @@
         background: var(--main-color-hover);
       }
     }
+
+    @include focus;
   }
   .header__lang-selector {
     margin-left: auto;
@@ -324,8 +326,57 @@
     border-bottom: 1px solid var(--color-gray-1);
   }
 
+  &__nav-link {
+    @include focus;
+  }
+
   &__nav-item {
     @include font-offcanvas;
+  }
+
+  &__accordion-button {
+    padding: 0;
+    justify-content: space-between;
+    // &:focus {
+    //   box-shadow: 0 0 0 0.25rem rgba(#085f34, 0.35);
+    // }
+
+    &::after {
+      width: 12px;
+      height: 12px;
+      margin-left: 7px;
+      vertical-align: middle;
+      background: url(../img/dropdown-arrow.svg);
+      background-repeat: no-repeat;
+      transition: $trans;
+      // transform: rotate(180deg);
+    }
+
+    &.collapsed {
+      &::after {
+        background-image: url(../img/dropdown-arrow.svg);
+        transform: rotate(0deg);
+      }
+    }
+
+    @include focus;
+
+    &:not(.collapsed) {
+      color: unset;
+      background-color: unset;
+      // box-shadow: unset;
+      // box-shadow: 0 0 0 0.25rem rgba(#085f34, 0.35);
+    }
+  }
+
+  &__accordion-link {
+    @include font-text-1-regular;
+
+    &:focus-visible {
+      // border-color: var(--color-primary); /* Change border color on focus */
+      background-color: var(--color-gray-4);
+      box-shadow: 0 0 0 0.25rem rgba(#085f34, 0.35); /* Adjust box-shadow for the focus ring */
+    }
   }
 
   @include breakpoint(sm) {
@@ -674,6 +725,8 @@
     @include hover {
       color: var(--color-primary);
     }
+
+    @include focus;
 
     &:not(:last-of-type) {
       margin-right: 25px;
@@ -1339,6 +1392,39 @@
   }
 }
 
+.fixed-phone {
+  display: none;
+  position: fixed;
+  bottom: 86px;
+  right: 16px;
+  color: var(--color-primary);
+  transition: $trans;
+  z-index: 10;
+  border-radius: 40px;
+
+  height: 70px;
+  width: 70px;
+  background-color: var(--color-primary);
+  transition: $trans;
+
+  &__link {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+
+    @include hover {
+      background-color: var(--color-green-dark);
+    }
+  }
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+}
+
 .footer {
   background: var(--color-white);
   // margin-top: var(--page-gap);
@@ -1385,7 +1471,11 @@
     // flex: 1;
 
     &-item {
+      transition: $trans;
       @include font-nav;
+      @include hover {
+        color: var(--color-primary);
+      }
     }
 
     @include breakpoint(xxl) {
@@ -1419,6 +1509,14 @@
 
     &-text {
       @include font-text-2-regular;
+    }
+
+    a {
+      transition: $trans;
+
+      @include hover {
+        color: var(--color-primary);
+      }
     }
 
     @include breakpoint(xxl) {
@@ -1919,6 +2017,7 @@
 
     &.active {
       color: var(--color-primary);
+      background-color: var(--color-green-light);
     }
 
     @include breakpoint(xl) {
@@ -1955,7 +2054,7 @@
 
   &__text {
     padding: 0 0 space(24) space(24);
-    @include font-title-2;
+    @include font-title-2-medium;
 
     @include breakpoint(md) {
       padding: 0;
@@ -2110,7 +2209,7 @@
 
   &__header {
     padding: 0 35px;
-    text-align: center;
+    // text-align: center;
     display: inline-block;
     margin: 0 0 8px 0;
     transition: $trans;
@@ -2129,7 +2228,7 @@
   }
 
   &__title {
-    @include font-title-1;
+    @include font-title-2-bold;
   }
 
   &__category {
@@ -2428,6 +2527,7 @@
   }
 
   &-input {
+    flex-shrink: 0;
     height: 20px;
     width: 20px;
     margin-top: 0;
@@ -2435,7 +2535,7 @@
     margin-right: 16px;
     background-color: var(--color-gray-4);
 
-    &:focus {
+    &:focus-visible {
       box-shadow: 0 0 0 0.25rem rgba(#085f34, 0.35);
       border-color: var(--color-primary); /* Change border color on focus */
     }
@@ -3817,7 +3917,7 @@
     top: 24px;
     right: 24px;
 
-    &:focus {
+    &:focus-visible {
       box-shadow: 0 0 0 0.25rem rgba(#085f34, 0.35);
       // border-color: var(--color-primary); /* Change border color on focus */
     }
@@ -3849,7 +3949,9 @@
   }
 
   &-dialog {
-    max-width: 768px;
+    @media (min-width: 991px) {
+      max-width: 768px;
+    }
   }
 
   &-content {
@@ -3864,5 +3966,37 @@
       // width: 20px;
     }
     @include font-text-2-regular;
+  }
+}
+
+// filter offcanvas
+
+.filter-offcanvas {
+  padding-right: 12px;
+  padding-left: 12px;
+  &__content {
+    padding-left: 20px;
+    // padding: 0;
+    overflow-y: auto;
+    overflow-x: visible;
+  }
+
+  .header-bottom__filter-group {
+    padding: 0;
+    padding-bottom: 13px;
+    border-right: none;
+    border-bottom: 1px solid var(--color-gray-2);
+    margin-bottom: 24px;
+  }
+
+  &__form {
+    .header-bottom__filter-group:not(:has(+ .header-bottom__filter-group)) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .header-bottom__filter-actions {
+    flex-direction: column;
+    row-gap: 12px;
   }
 }
