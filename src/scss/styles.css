@@ -2264,13 +2264,27 @@ footer {
 }
 @media (max-width: 1199px) and (min-width: 0px) {
   .insulation-card__header {
+    max-width: 50%;
     padding: 0 25px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
 }
+@media (max-width: 991px) and (min-width: 0px) {
+  .insulation-card__header {
+    max-width: 70%;
+  }
+}
 .insulation-card__title {
+  font-family: "Exo 2", sans-serif;
+  line-height: 1.2;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2rem;
+  font-size: clamp(2rem, 1.8924050633rem + 0.5063291139vw, 2.5rem);
+}
+.insulation-card__title--long {
   font-family: "Exo 2", sans-serif;
   line-height: 1.2;
   font-style: normal;

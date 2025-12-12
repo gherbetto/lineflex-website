@@ -2217,6 +2217,7 @@
     z-index: 1; // Ensure content stays above overlay
 
     @include breakpoint(lg) {
+      max-width: 50%;
       padding: 0 25px;
       position: absolute;
       top: 50%;
@@ -2224,11 +2225,15 @@
     }
 
     @include breakpoint(md) {
+      max-width: 70%;
     }
   }
 
   &__title {
-    @include font-title-2-bold;
+    @include font-title-1;
+    &--long {
+      @include font-title-2-bold;
+    }
   }
 
   &__category {
