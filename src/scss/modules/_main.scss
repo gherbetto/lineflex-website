@@ -1533,16 +1533,16 @@
 
   &__cta-btn {
     // max-width: 182px;
-    border: 1px solid var(--color-primary);
-    background-color: var(--color-white);
-    color: var(--color-gray-1);
+    // border: 1px solid var(--color-primary);
+    // background-color: var(--color-white);
+    // color: var(--color-gray-1);
     padding: 7px 17px;
     transition: $trans;
 
-    @include hover {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-    }
+    // @include hover {
+    //   background-color: var(--color-primary);
+    //   color: var(--color-white);
+    // }
   }
 
   &__cta-btn-content {

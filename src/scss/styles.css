@@ -1634,17 +1634,8 @@ footer {
   }
 }
 .footer__cta-btn {
-  border: 1px solid var(--color-primary);
-  background-color: var(--color-white);
-  color: var(--color-gray-1);
   padding: 7px 17px;
   transition: all 0.2s ease-out;
-}
-@media (hover: hover) {
-  .footer__cta-btn:hover, .footer__cta-btn:focus {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-  }
 }
 .footer__cta-btn-content {
   display: flex;
