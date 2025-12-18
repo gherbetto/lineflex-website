@@ -1,0 +1,11 @@
+include ../layouts/mixins.pug
+.cookies-consent-banner__wrapper
+  .container
+    .cookies-consent-banner#cookie-consent-popup(style={display:'none'})
+      .cookies-text Для персонализации сервисов сайт использует cookies, применяя метрические и иные системы аналитик, в том числе сервис "Яндекс.Метрика". Запретить эти действия можно в настройках браузера". Я ознакомлен и согласен с Политикой в отношении обработки персональных данных ООО «Your company name».
+        |
+        |
+        a.cookies__link(data-bs-toggle="modal" data-bs-target=".personal-data-modal" href="#") Подробнее
+      .cookies-buttons
+        button#cookie-consent-accept.cookies-buttons__item.cookies-buttons__item--accept Принять
+        a(href="https://yandex.ru").cookies-buttons__item.cookies-buttons__item--decline Отказаться
