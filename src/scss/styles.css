@@ -2293,9 +2293,58 @@ footer {
 .insulation__cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-areas: "A B C" "D E F";
   -moz-column-gap: 40px;
        column-gap: 40px;
   row-gap: 24px;
+}
+.insulation__cards :nth-child(1) {
+  grid-area: A;
+}
+@media (max-width: 991px) and (min-width: 0px) {
+  .insulation__cards :nth-child(1) {
+    grid-area: auto;
+  }
+}
+.insulation__cards :nth-child(2) {
+  grid-area: D;
+}
+@media (max-width: 991px) and (min-width: 0px) {
+  .insulation__cards :nth-child(2) {
+    grid-area: auto;
+  }
+}
+.insulation__cards :nth-child(3) {
+  grid-area: B;
+}
+@media (max-width: 991px) and (min-width: 0px) {
+  .insulation__cards :nth-child(3) {
+    grid-area: auto;
+  }
+}
+.insulation__cards :nth-child(4) {
+  grid-area: E;
+}
+@media (max-width: 991px) and (min-width: 0px) {
+  .insulation__cards :nth-child(4) {
+    grid-area: auto;
+  }
+}
+.insulation__cards :nth-child(5) {
+  grid-area: C;
+}
+@media (max-width: 991px) and (min-width: 0px) {
+  .insulation__cards :nth-child(5) {
+    grid-area: auto;
+  }
+}
+.insulation__cards :nth-child(6) {
+  grid-area: F;
+}
+@media (max-width: 991px) and (min-width: 0px) {
+  .insulation__cards :nth-child(6) {
+    grid-area: auto;
+  }
 }
 @media (max-width: 1699px) and (min-width: 0px) {
   .insulation__cards {
@@ -2304,11 +2353,13 @@ footer {
 }
 @media (max-width: 1399px) and (min-width: 0px) {
   .insulation__cards {
+    grid-template-areas: "A B" "D E " "C F";
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 991px) and (min-width: 0px) {
   .insulation__cards {
+    grid-template-areas: none;
     grid-template-columns: 1fr;
   }
 }

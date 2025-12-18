@@ -2250,18 +2250,72 @@
   &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-areas: "A B C" "D E F";
     column-gap: 40px;
     row-gap: 24px;
     // grid-auto-rows: 288px;
+
+    :nth-child(1) {
+      grid-area: A;
+
+      @include breakpoint(md) {
+        grid-area: auto;
+      }
+    }
+
+    :nth-child(2) {
+      grid-area: D;
+
+      @include breakpoint(md) {
+        grid-area: auto;
+      }
+    }
+
+    :nth-child(3) {
+      grid-area: B;
+
+      @include breakpoint(md) {
+        grid-area: auto;
+      }
+    }
+
+    :nth-child(4) {
+      grid-area: E;
+
+      @include breakpoint(md) {
+        grid-area: auto;
+      }
+    }
+
+    :nth-child(5) {
+      grid-area: C;
+
+      @include breakpoint(md) {
+        grid-area: auto;
+      }
+    }
+
+    :nth-child(6) {
+      grid-area: F;
+
+      @include breakpoint(md) {
+        grid-area: auto;
+      }
+    }
 
     @include breakpoint(xxl) {
       grid-template-columns: repeat(3, 1fr);
     }
     @include breakpoint(xl) {
+      grid-template-areas:
+        "A B"
+        "D E "
+        "C F";
       grid-template-columns: repeat(2, 1fr);
     }
 
     @include breakpoint(md) {
+      grid-template-areas: none;
       grid-template-columns: 1fr;
     }
   }
