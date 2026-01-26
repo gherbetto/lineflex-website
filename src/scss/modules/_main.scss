@@ -823,7 +823,9 @@
       right: 0;
       border-bottom: 2px solid var(--color-primary);
       width: 40%;
-      transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transition:
+        width 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
     }
 
     &:hover::after {
@@ -873,6 +875,7 @@
 
   &__actions-bottom {
     display: flex;
+    align-items: flex-start;
   }
 
   // Sub-Element: language selector
