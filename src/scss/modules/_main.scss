@@ -2368,7 +2368,7 @@
 
   &__hover-overlay {
     position: absolute;
-    top: 130px;
+    top: 110px;
     opacity: 0;
     visibility: hidden; // Use both opacity and visibility for smooth transitions
     transition: all 0.3s ease;
@@ -2453,10 +2453,14 @@
     @include breakpoint(md) {
       max-width: 70%;
     }
+
+    @include breakpoint(xs) {
+      max-width: 50%;
+    }
   }
 
   &__title {
-    @include font-title-1;
+    @include font-title-2-bold;
     &--long {
       @include font-title-2-bold;
     }
@@ -2508,8 +2512,12 @@
     right: 0;
     z-index: 1;
 
-    @include breakpoint(lg) {
-      height: 100%;
+    // @include breakpoint(lg) {
+    //   height: 100%;
+    // }
+
+    @include breakpoint(xxl) {
+      height: 200px;
     }
   }
 
