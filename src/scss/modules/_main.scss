@@ -2519,6 +2519,10 @@
     @include breakpoint(xxl) {
       height: 200px;
     }
+
+    @include breakpoint(sm) {
+      height: 100%;
+    }
   }
 
   &__img {
@@ -2552,6 +2556,14 @@
     .insulation-card__temperature {
       display: none;
     }
+  }
+
+  @include breakpoint(sm) {
+    height: 150px;
+  }
+
+  @include breakpoint(xs) {
+    height: 120px;
   }
 }
 

@@ -2545,6 +2545,11 @@ footer {
     height: 200px;
   }
 }
+@media (max-width: 767px) and (min-width: 0px) {
+  .insulation-card__image {
+    height: 100%;
+  }
+}
 .insulation-card__img {
   max-width: 100%;
   height: auto;
@@ -2572,6 +2577,16 @@ footer {
   .insulation-card .insulation-card__category,
   .insulation-card .insulation-card__temperature {
     display: none;
+  }
+}
+@media (max-width: 767px) and (min-width: 0px) {
+  .insulation-card {
+    height: 150px;
+  }
+}
+@media (max-width: 576px) and (min-width: 0px) {
+  .insulation-card {
+    height: 120px;
   }
 }
 
